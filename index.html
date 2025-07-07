@@ -1,0 +1,4318 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>גלה את הכוח שמחבא בתוכך</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: ["class"],
+        theme: {
+          extend: {
+            colors: {
+              border: 'hsl(240 5.9% 90%)',
+              input: 'hsl(240 5.9% 90%)', 
+              ring: 'hsl(240 5.9% 10%)',
+              background: 'hsl(0 0% 100%)',
+              foreground: 'hsl(240 10% 3.9%)',
+              primary: {
+                DEFAULT: 'hsl(240 9% 98%)',
+                foreground: 'hsl(240 5.9% 10%)'
+              },
+              secondary: {
+                DEFAULT: 'hsl(240 4.8% 95.9%)',
+                foreground: 'hsl(240 5.9% 10%)'
+              },
+              muted: {
+                DEFAULT: 'hsl(240 4.8% 95.9%)',
+                foreground: 'hsl(240 3.8% 46.1%)'
+              },
+              accent: {
+                DEFAULT: 'hsl(240 4.8% 95.9%)',
+                foreground: 'hsl(240 5.9% 10%)'
+              },
+              card: {
+                DEFAULT: 'hsl(0 0% 100%)',
+                foreground: 'hsl(240 10% 3.9%)'
+              }
+            },
+            borderRadius: {
+              lg: '0.75rem',
+              md: '0.5rem',
+              sm: '0.25rem'
+            }
+          }
+        }
+      }
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            direction: rtl;
+        }
+        
+        /* Premium Animations */
+        @keyframes float {
+          0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.1; }
+          50% { transform: translateY(-20px) rotate(5deg); opacity: 0.3; }
+        }
+        
+        @keyframes float3d {
+          0%, 100% { transform: translateY(0px) rotateY(0deg) scale(1); }
+          50% { transform: translateY(-20px) rotateY(180deg) scale(1.1); }
+        }
+        
+        @keyframes neonGlow {
+          0%, 100% { box-shadow: 0 0 5px #8b5cf6, 0 0 10px #8b5cf6; }
+          50% { box-shadow: 0 0 20px #8b5cf6, 0 0 30px #8b5cf6, 0 0 40px #8b5cf6; }
+        }
+        
+        @keyframes particles {
+          0% { transform: translateY(0px) scale(1); opacity: 0.3; }
+          50% { transform: translateY(-30px) scale(1.2); opacity: 0.7; }
+          100% { transform: translateY(0px) scale(1); opacity: 0.3; }
+        }
+        
+        @keyframes matrixRain {
+          0% { transform: translateY(-100px); opacity: 0; }
+          50% { opacity: 1; }
+          100% { transform: translateY(400px); opacity: 0; }
+        }
+        
+        /* Premium Background Animations */
+        @keyframes gradientShift {
+          0%, 100% { transform: translateX(0%) rotate(0deg); }
+          33% { transform: translateX(-10%) rotate(120deg); }
+          66% { transform: translateX(10%) rotate(240deg); }
+        }
+        
+        @keyframes floatGeometric {
+          0%, 100% { 
+            transform: translateY(0px) rotate(0deg) scale(1);
+            opacity: 0.6;
+          }
+          50% { 
+            transform: translateY(-30px) rotate(180deg) scale(1.2);
+            opacity: 0.8;
+          }
+        }
+        
+        @keyframes sparkleFloat {
+          0%, 100% { 
+            opacity: 0; 
+            transform: translateY(0px) scale(0);
+          }
+          50% { 
+            opacity: 1; 
+            transform: translateY(-20px) scale(1.5);
+          }
+        }
+        
+        @keyframes energyFlow {
+          0% { 
+            stroke-dashoffset: 0;
+            opacity: 0.7;
+          }
+          50% { 
+            stroke-dashoffset: -200;
+            opacity: 1;
+          }
+          100% { 
+            stroke-dashoffset: -400;
+            opacity: 0.7;
+          }
+        }
+        
+        @keyframes fluidMorph {
+          0%, 100% { 
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+            transform: rotate(0deg) scale(1);
+          }
+          25% { 
+            border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+            transform: rotate(90deg) scale(1.1);
+          }
+          50% { 
+            border-radius: 50% 60% 30% 60% / 30% 60% 70% 40%;
+            transform: rotate(180deg) scale(0.9);
+          }
+          75% { 
+            border-radius: 70% 30% 60% 40% / 40% 50% 60% 30%;
+            transform: rotate(270deg) scale(1.05);
+          }
+        }
+        
+        @keyframes rotate3D {
+          0% { 
+            transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(0px);
+          }
+          25% { 
+            transform: rotateX(90deg) rotateY(45deg) rotateZ(15deg) translateZ(30px);
+          }
+          50% { 
+            transform: rotateX(180deg) rotateY(90deg) rotateZ(30deg) translateZ(60px);
+          }
+          75% { 
+            transform: rotateX(270deg) rotateY(135deg) rotateZ(45deg) translateZ(30px);
+          }
+          100% { 
+            transform: rotateX(360deg) rotateY(180deg) rotateZ(60deg) translateZ(0px);
+          }
+        }
+        
+        @keyframes holographicShift {
+          0%, 100% { 
+            transform: translateX(0%) rotate(0deg) scale(1);
+            opacity: 0.8;
+          }
+          33% { 
+            transform: translateX(-15%) rotate(120deg) scale(1.1);
+            opacity: 0.9;
+          }
+          66% { 
+            transform: translateX(15%) rotate(240deg) scale(0.9);
+            opacity: 1;
+          }
+        }
+        
+        @keyframes holographicFloat {
+          0%, 100% { 
+            transform: translateY(0px) rotate(0deg) scale(1);
+            opacity: 0.7;
+          }
+          50% { 
+            transform: translateY(-40px) rotate(180deg) scale(1.3);
+            opacity: 0.9;
+          }
+        }
+        
+        /* Premium Effects */
+        
+        /* Neon Academy Effects */
+        .neon-text {
+          color: #00f5ff !important;
+          text-shadow: 0 0 10px #00f5ff, 0 0 20px #00f5ff, 0 0 30px #00f5ff !important;
+        }
+        
+        .glass-effect {
+          backdrop-filter: blur(20px);
+          background: rgba(0, 245, 255, 0.1) !important;
+          border: 1px solid rgba(0, 245, 255, 0.3);
+          box-shadow: 0 0 20px rgba(0, 245, 255, 0.2);
+        }
+        
+        .cyberpunk-grid::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background-image: 
+            linear-gradient(90deg, rgba(0, 245, 255, 0.1) 1px, transparent 1px),
+            linear-gradient(rgba(0, 245, 255, 0.1) 1px, transparent 1px);
+          background-size: 40px 40px;
+          animation: grid-glow 4s ease-in-out infinite alternate;
+        }
+        
+        @keyframes grid-glow {
+          0% { opacity: 0.3; }
+          100% { opacity: 0.7; }
+        }
+        
+        .feature-icon {
+          background: linear-gradient(135deg, rgba(0, 245, 255, 0.2), rgba(147, 51, 234, 0.2)) !important;
+          border: 2px solid #00f5ff !important;
+          box-shadow: 0 0 20px #00f5ff !important;
+        }
+        
+        /* Premium sections use exact component styling with animations */
+        .hero { 
+            linear-gradient(135deg, rgb(0, 0, 0) 0%, rgb(124, 58, 237) 50%, rgb(0, 0, 0) 100%); position: relative; overflow: hidden;
+            padding: 5rem 1.5rem;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .emotional { 
+            linear-gradient(to bottom, rgb(124, 58, 237), rgb(0, 0, 0)); position: relative; overflow: hidden;
+            padding: 4rem 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .features { 
+            linear-gradient(to bottom, rgb(0, 0, 0), rgb(88, 28, 135)); position: relative; overflow: hidden;
+            padding: 5rem 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .testimonials { 
+            linear-gradient(to bottom, rgb(0, 0, 0), rgb(88, 28, 135)); position: relative; overflow: hidden;
+            padding: 4rem 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .about { 
+            linear-gradient(to bottom, rgb(88, 28, 135), rgb(124, 58, 237)); position: relative; overflow: hidden;
+            padding: 4rem 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pricing { 
+            linear-gradient(to bottom, rgb(88, 28, 135), rgb(0, 0, 0)); position: relative; overflow: hidden;
+            padding: 5rem 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .faq { 
+            linear-gradient(to bottom, rgb(88, 28, 135), rgb(0, 0, 0)); position: relative; overflow: hidden;
+            padding: 4rem 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .final-cta { 
+            linear-gradient(135deg, rgb(124, 58, 237) 0%, rgb(0, 0, 0) 100%); position: relative; overflow: hidden;
+            padding: 4rem 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact { 
+            linear-gradient(to bottom, rgb(0, 0, 0), rgb(88, 28, 135)); position: relative; overflow: hidden;
+            padding: 4rem 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .footer { 
+            background-color: #00d4ff;
+            padding: 2rem 1.5rem;
+            text-align: center;
+        }
+        
+        /* Body should match the section backgrounds */
+        body {
+            background: linear-gradient(135deg, rgb(0, 0, 0) 0%, rgb(124, 58, 237) 50%, rgb(0, 0, 0) 100%); position: relative; overflow-x: hidden;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+    </style>
+</head>
+<body class="text-foreground">
+
+    <!-- Hero Section -->
+    <section class="hero" >
+        
+        <div style="position: absolute; inset: 0; overflow: hidden;">
+          
+            <div style="
+              position: absolute;
+              width: 2.6301374780307984px;
+              height: 2.419635270188685px;
+              left: 40.768937525203484%;
+              top: 18.07809307984534%;
+              background: #3b82f6;
+              border-radius: 50%;
+              animation: sparkleFloat 9.145348322600512s ease-in-out infinite 2.8159276292032223s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 2.3890515004870636px;
+              height: 2.411407446436535px;
+              left: 69.96576421343377%;
+              top: 20.82198392691709%;
+              background: #ec4899;
+              border-radius: 50%;
+              animation: sparkleFloat 8.943966573236782s ease-in-out infinite 2.081666674449355s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 5.682888937176928px;
+              height: 5.046340750310776px;
+              left: 42.999664290819965%;
+              top: 69.5146455004234%;
+              background: #ffffff;
+              border-radius: 50%;
+              animation: sparkleFloat 8.379381158072723s ease-in-out infinite 0.3730293881727572s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 3.618389070040178px;
+              height: 3.0672146008172954px;
+              left: 11.6747885123347%;
+              top: 67.7736276844806%;
+              background: #ec4899;
+              border-radius: 50%;
+              animation: sparkleFloat 8.915006999386627s ease-in-out infinite 1.7569187800282282s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 2.115847662157526px;
+              height: 4.328747286549029px;
+              left: 96.63309329207657%;
+              top: 95.28717480208323%;
+              background: #3b82f6;
+              border-radius: 50%;
+              animation: sparkleFloat 8.871766127418415s ease-in-out infinite 2.5288160626359564s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 2.0346805494761133px;
+              height: 5.12519174431277px;
+              left: 4.979512398888886%;
+              top: 66.77902258385672%;
+              background: #ffffff;
+              border-radius: 50%;
+              animation: sparkleFloat 9.698631478528364s ease-in-out infinite 2.527027524513753s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 5.823698907412246px;
+              height: 5.7727283581683px;
+              left: 9.099770455345002%;
+              top: 43.51664229045833%;
+              background: #ffffff;
+              border-radius: 50%;
+              animation: sparkleFloat 7.638053449453115s ease-in-out infinite 2.501180888169415s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 2.574543285183173px;
+              height: 4.78926241986705px;
+              left: 56.12013460717586%;
+              top: 45.22756705444707%;
+              background: #8b5cf6;
+              border-radius: 50%;
+              animation: sparkleFloat 6.681059342306672s ease-in-out infinite 0.682646423153573s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 2.8465276509182393px;
+              height: 4.543238011489345px;
+              left: 28.535662493323567%;
+              top: 13.072321319156199%;
+              background: #ffffff;
+              border-radius: 50%;
+              animation: sparkleFloat 6.959585677243726s ease-in-out infinite 0.7963969956774605s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 4.1342429929283195px;
+              height: 3.272326279542981px;
+              left: 67.83556287746168%;
+              top: 36.13968641757511%;
+              background: #3b82f6;
+              border-radius: 50%;
+              animation: sparkleFloat 8.912330011565782s ease-in-out infinite 2.3446133608919553s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 5.7568829096980245px;
+              height: 3.389339149994485px;
+              left: 12.296792486572583%;
+              top: 86.29776963426062%;
+              background: #ec4899;
+              border-radius: 50%;
+              animation: sparkleFloat 6.360289127504322s ease-in-out infinite 2.302160037087609s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 5.5866957734218605px;
+              height: 2.7183003649673374px;
+              left: 92.00867582083276%;
+              top: 36.7772054080436%;
+              background: #3b82f6;
+              border-radius: 50%;
+              animation: sparkleFloat 7.436690080739915s ease-in-out infinite 2.7323561517561865s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 3.1935264575334568px;
+              height: 2.4065002190167237px;
+              left: 80.36944399798763%;
+              top: 50.90182227824943%;
+              background: #ec4899;
+              border-radius: 50%;
+              animation: sparkleFloat 7.32370956594295s ease-in-out infinite 0.2223557438523649s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 4.5603508457001505px;
+              height: 3.899099723779033px;
+              left: 24.113797020489347%;
+              top: 64.39412687479485%;
+              background: #ec4899;
+              border-radius: 50%;
+              animation: sparkleFloat 9.116793030038593s ease-in-out infinite 0.7649893812955503s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 2.4372828561084243px;
+              height: 2.6387998803490462px;
+              left: 19.633257452490472%;
+              top: 5.866468960523408%;
+              background: #ec4899;
+              border-radius: 50%;
+              animation: sparkleFloat 7.066050330038325s ease-in-out infinite 1.4876492839807884s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 5.194325906514292px;
+              height: 3.213791845741032px;
+              left: 73.24577841264711%;
+              top: 36.77210398274573%;
+              background: #8b5cf6;
+              border-radius: 50%;
+              animation: sparkleFloat 6.673578620948648s ease-in-out infinite 1.5506773371830807s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 3.7441781776156997px;
+              height: 2.5551365771435646px;
+              left: 55.64628552305745%;
+              top: 72.47003412169512%;
+              background: #8b5cf6;
+              border-radius: 50%;
+              animation: sparkleFloat 6.0747700918595005s ease-in-out infinite 1.6811789408262379s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 4.771803965512728px;
+              height: 5.092272750967899px;
+              left: 82.36780941340153%;
+              top: 77.59300254256848%;
+              background: #ec4899;
+              border-radius: 50%;
+              animation: sparkleFloat 8.789564948333602s ease-in-out infinite 0.9442263150088273s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 4.645460745941836px;
+              height: 2.9804161924591197px;
+              left: 72.46985651828103%;
+              top: 51.642632626723916%;
+              background: #ffffff;
+              border-radius: 50%;
+              animation: sparkleFloat 6.067892397668569s ease-in-out infinite 2.218092290719858s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 3.7876690839755516px;
+              height: 4.052962445275844px;
+              left: 88.64772412830713%;
+              top: 32.93525230907487%;
+              background: #ec4899;
+              border-radius: 50%;
+              animation: sparkleFloat 8.641436609830482s ease-in-out infinite 2.61701975022942s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 5.084582662595989px;
+              height: 4.863174760759026px;
+              left: 7.215552040632622%;
+              top: 92.41615877599662%;
+              background: #ffffff;
+              border-radius: 50%;
+              animation: sparkleFloat 6.728242392839871s ease-in-out infinite 0.7797071908385287s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 4.973502619412518px;
+              height: 3.202507932440077px;
+              left: 35.90278221844879%;
+              top: 48.728327994888176%;
+              background: #3b82f6;
+              border-radius: 50%;
+              animation: sparkleFloat 6.860652051879857s ease-in-out infinite 0.6119346831002783s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 3.8329732239683914px;
+              height: 4.5814942797849px;
+              left: 0.3496267187220514%;
+              top: 2.3937659313615467%;
+              background: #8b5cf6;
+              border-radius: 50%;
+              animation: sparkleFloat 9.44502804650831s ease-in-out infinite 1.8745958538254652s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 2.23749079694472px;
+              height: 2.671241153394997px;
+              left: 88.98937432505856%;
+              top: 99.92503183515583%;
+              background: #3b82f6;
+              border-radius: 50%;
+              animation: sparkleFloat 8.714098555050937s ease-in-out infinite 1.3636553544569538s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 4.391593577121782px;
+              height: 2.536549000105677px;
+              left: 29.176186859278165%;
+              top: 30.99415487346726%;
+              background: #ffffff;
+              border-radius: 50%;
+              animation: sparkleFloat 9.138183837219756s ease-in-out infinite 1.7913602588684243s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 4.948778116582227px;
+              height: 4.825945170074201px;
+              left: 3.179216397804574%;
+              top: 25.603079677356277%;
+              background: #8b5cf6;
+              border-radius: 50%;
+              animation: sparkleFloat 8.3047234164211s ease-in-out infinite 0.4456537523771509s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 2.2678950515294587px;
+              height: 3.621654184385536px;
+              left: 61.02615496315402%;
+              top: 79.50810419736511%;
+              background: #8b5cf6;
+              border-radius: 50%;
+              animation: sparkleFloat 9.090691413957048s ease-in-out infinite 0.4004753637952966s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 2.902184423732012px;
+              height: 3.383287077930971px;
+              left: 10.963219272218282%;
+              top: 45.05239984768278%;
+              background: #8b5cf6;
+              border-radius: 50%;
+              animation: sparkleFloat 8.37844767338517s ease-in-out infinite 0.13950927264333346s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 3.155180383836883px;
+              height: 5.724887215397462px;
+              left: 18.541211308465222%;
+              top: 72.48063649152401%;
+              background: #ffffff;
+              border-radius: 50%;
+              animation: sparkleFloat 6.572106685202535s ease-in-out infinite 0.3421132695818899s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 4.183184478589482px;
+              height: 3.207427911103299px;
+              left: 64.99439927828055%;
+              top: 88.10359289330083%;
+              background: #ffffff;
+              border-radius: 50%;
+              animation: sparkleFloat 8.519437985853019s ease-in-out infinite 1.9621396732968353s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 5.008489979161652px;
+              height: 5.373158625869813px;
+              left: 99.71944462333778%;
+              top: 98.73648678950808%;
+              background: #ec4899;
+              border-radius: 50%;
+              animation: sparkleFloat 9.137871189659911s ease-in-out infinite 2.0696216603503066s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 3.176582431452941px;
+              height: 4.852087641821191px;
+              left: 31.8559726832784%;
+              top: 88.14625770942281%;
+              background: #ffffff;
+              border-radius: 50%;
+              animation: sparkleFloat 8.649458537671293s ease-in-out infinite 2.7696702302076197s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 2.1347843658334216px;
+              height: 2.783429069181291px;
+              left: 74.06435641918382%;
+              top: 43.51127002640749%;
+              background: #3b82f6;
+              border-radius: 50%;
+              animation: sparkleFloat 8.347839671337237s ease-in-out infinite 0.05800178928766997s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 5.905059537589504px;
+              height: 3.550050076410709px;
+              left: 51.089681315730694%;
+              top: 43.31230591623182%;
+              background: #ffffff;
+              border-radius: 50%;
+              animation: sparkleFloat 6.84015912638184s ease-in-out infinite 1.9053238593954966s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 4.881568996648134px;
+              height: 3.9842807725342078px;
+              left: 38.03339785811669%;
+              top: 90.61791861180505%;
+              background: #ec4899;
+              border-radius: 50%;
+              animation: sparkleFloat 9.686284998591976s ease-in-out infinite 0.3752632852299108s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+        </div>
+        
+        
+        <!-- Premium hero effects based on template -->
+        
+        
+        <!-- Neon city skyline -->
+        <div class="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-purple-900/50 to-transparent">
+            
+                <div class="absolute bg-purple-600 opacity-30" style="
+                    width: 30.982342674923025px;
+                    height: 133.61870253628453px;
+                    left: 0%;
+                    bottom: 0;
+                    animation: neonGlow 3s infinite ease-in-out;
+                    animation-delay: 0s;
+                "></div>
+            
+                <div class="absolute bg-purple-600 opacity-30" style="
+                    width: 21.0728371492968px;
+                    height: 107.21402527999211px;
+                    left: 5%;
+                    bottom: 0;
+                    animation: neonGlow 3s infinite ease-in-out;
+                    animation-delay: 0.1s;
+                "></div>
+            
+                <div class="absolute bg-purple-600 opacity-30" style="
+                    width: 38.04698767113369px;
+                    height: 164.74276994311043px;
+                    left: 10%;
+                    bottom: 0;
+                    animation: neonGlow 3s infinite ease-in-out;
+                    animation-delay: 0.2s;
+                "></div>
+            
+                <div class="absolute bg-purple-600 opacity-30" style="
+                    width: 32.97055953753927px;
+                    height: 104.83768915023921px;
+                    left: 15%;
+                    bottom: 0;
+                    animation: neonGlow 3s infinite ease-in-out;
+                    animation-delay: 0.30000000000000004s;
+                "></div>
+            
+                <div class="absolute bg-purple-600 opacity-30" style="
+                    width: 45.98104505992791px;
+                    height: 194.4672003389246px;
+                    left: 20%;
+                    bottom: 0;
+                    animation: neonGlow 3s infinite ease-in-out;
+                    animation-delay: 0.4s;
+                "></div>
+            
+                <div class="absolute bg-purple-600 opacity-30" style="
+                    width: 21.281352581716565px;
+                    height: 136.75447279496981px;
+                    left: 25%;
+                    bottom: 0;
+                    animation: neonGlow 3s infinite ease-in-out;
+                    animation-delay: 0.5s;
+                "></div>
+            
+                <div class="absolute bg-purple-600 opacity-30" style="
+                    width: 26.91894568430634px;
+                    height: 127.92221467951444px;
+                    left: 30%;
+                    bottom: 0;
+                    animation: neonGlow 3s infinite ease-in-out;
+                    animation-delay: 0.6000000000000001s;
+                "></div>
+            
+                <div class="absolute bg-purple-600 opacity-30" style="
+                    width: 41.35120555197655px;
+                    height: 196.52268915962546px;
+                    left: 35%;
+                    bottom: 0;
+                    animation: neonGlow 3s infinite ease-in-out;
+                    animation-delay: 0.7000000000000001s;
+                "></div>
+            
+                <div class="absolute bg-purple-600 opacity-30" style="
+                    width: 24.823700450517634px;
+                    height: 123.79982335797311px;
+                    left: 40%;
+                    bottom: 0;
+                    animation: neonGlow 3s infinite ease-in-out;
+                    animation-delay: 0.8s;
+                "></div>
+            
+                <div class="absolute bg-purple-600 opacity-30" style="
+                    width: 27.494260662471603px;
+                    height: 159.4869685983931px;
+                    left: 45%;
+                    bottom: 0;
+                    animation: neonGlow 3s infinite ease-in-out;
+                    animation-delay: 0.9s;
+                "></div>
+            
+                <div class="absolute bg-purple-600 opacity-30" style="
+                    width: 35.42179396567877px;
+                    height: 174.45305163447387px;
+                    left: 50%;
+                    bottom: 0;
+                    animation: neonGlow 3s infinite ease-in-out;
+                    animation-delay: 1s;
+                "></div>
+            
+                <div class="absolute bg-purple-600 opacity-30" style="
+                    width: 20.954552439238746px;
+                    height: 100.38044109346988px;
+                    left: 55%;
+                    bottom: 0;
+                    animation: neonGlow 3s infinite ease-in-out;
+                    animation-delay: 1.1s;
+                "></div>
+            
+                <div class="absolute bg-purple-600 opacity-30" style="
+                    width: 49.93024456872487px;
+                    height: 123.69204476569917px;
+                    left: 60%;
+                    bottom: 0;
+                    animation: neonGlow 3s infinite ease-in-out;
+                    animation-delay: 1.2000000000000002s;
+                "></div>
+            
+                <div class="absolute bg-purple-600 opacity-30" style="
+                    width: 48.90582397685121px;
+                    height: 122.91791367541919px;
+                    left: 65%;
+                    bottom: 0;
+                    animation: neonGlow 3s infinite ease-in-out;
+                    animation-delay: 1.3s;
+                "></div>
+            
+                <div class="absolute bg-purple-600 opacity-30" style="
+                    width: 29.556069190648927px;
+                    height: 109.70494095108288px;
+                    left: 70%;
+                    bottom: 0;
+                    animation: neonGlow 3s infinite ease-in-out;
+                    animation-delay: 1.4000000000000001s;
+                "></div>
+            
+                <div class="absolute bg-purple-600 opacity-30" style="
+                    width: 49.880913539762226px;
+                    height: 132.08380303508318px;
+                    left: 75%;
+                    bottom: 0;
+                    animation: neonGlow 3s infinite ease-in-out;
+                    animation-delay: 1.5s;
+                "></div>
+            
+                <div class="absolute bg-purple-600 opacity-30" style="
+                    width: 27.6269326051647px;
+                    height: 175.24260076057567px;
+                    left: 80%;
+                    bottom: 0;
+                    animation: neonGlow 3s infinite ease-in-out;
+                    animation-delay: 1.6s;
+                "></div>
+            
+                <div class="absolute bg-purple-600 opacity-30" style="
+                    width: 22.436077295693686px;
+                    height: 164.0967421352501px;
+                    left: 85%;
+                    bottom: 0;
+                    animation: neonGlow 3s infinite ease-in-out;
+                    animation-delay: 1.7000000000000002s;
+                "></div>
+            
+                <div class="absolute bg-purple-600 opacity-30" style="
+                    width: 22.041696184810206px;
+                    height: 136.40847095787962px;
+                    left: 90%;
+                    bottom: 0;
+                    animation: neonGlow 3s infinite ease-in-out;
+                    animation-delay: 1.8s;
+                "></div>
+            
+                <div class="absolute bg-purple-600 opacity-30" style="
+                    width: 34.46501093756071px;
+                    height: 110.40412471512224px;
+                    left: 95%;
+                    bottom: 0;
+                    animation: neonGlow 3s infinite ease-in-out;
+                    animation-delay: 1.9000000000000001s;
+                "></div>
+            
+        </div>
+        
+        
+        
+        
+        
+        <div class="max-w-6xl mx-auto px-4 relative z-10">
+            <div class="text-center">
+                
+                <h1 class="text-4xl md:text-6xl font-bold mb-4 neon-text" style="color: #00f5ff; ">גלה את הכוח שמחבא בתוכך</h1>
+                <h2 class="text-xl md:text-2xl mb-6" style="color: #00f5ff; opacity: 0.9;">קורסים דיגיטליים מתקדמים שישנו את הקריירה שלך לעד</h2>
+                <p class="text-lg mb-8 max-w-4xl mx-auto" style="color: #00f5ff; opacity: 0.8;">הצטרף לאלפי תלמידים שכבר שדרגו את הכישורים שלהם והגיעו לרמות חדשות של הצלחה מקצועית</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#contact" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors h-11 px-8 text-white" style="background-color: #33ddff; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2);">
+                        
+                        התחל להתפתח
+                    </a>
+                    <a href="#features" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors h-11 px-8 text-white" style="background-color: #0099cc; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2);">
+                        
+                        צפה בתוכנית הלימודים
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emotional Section -->
+    
+     <section class="emotional">
+         
+        <div style="position: absolute; inset: 0; overflow: hidden;">
+          
+            <div style="
+              position: absolute;
+              width: 5.292579031466277px;
+              height: 5.778024781150728px;
+              left: 51.22960360448716%;
+              top: 76.0276161279201%;
+              background: #3b82f6;
+              border-radius: 50%;
+              animation: sparkleFloat 7.364624907021902s ease-in-out infinite 2.4541092350828033s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 5.722375586686777px;
+              height: 5.81201353047559px;
+              left: 40.08876659863559%;
+              top: 3.344614703237081%;
+              background: #ffffff;
+              border-radius: 50%;
+              animation: sparkleFloat 7.0596782097884425s ease-in-out infinite 0.9717489879631382s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 3.5507848011178806px;
+              height: 3.8629037264465924px;
+              left: 1.719618594356409%;
+              top: 48.20982256021229%;
+              background: #8b5cf6;
+              border-radius: 50%;
+              animation: sparkleFloat 7.2894346993522365s ease-in-out infinite 1.7235708490060286s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 2.5950374146965753px;
+              height: 2.755474815836479px;
+              left: 8.979713948859514%;
+              top: 2.4482861571983316%;
+              background: #3b82f6;
+              border-radius: 50%;
+              animation: sparkleFloat 7.2115531747823765s ease-in-out infinite 0.09229129218104093s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 5.960028989437329px;
+              height: 4.499038408288371px;
+              left: 94.86439900270503%;
+              top: 32.43024638779931%;
+              background: #ffffff;
+              border-radius: 50%;
+              animation: sparkleFloat 6.330907074867714s ease-in-out infinite 2.2147859943744113s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 5.6386295576536325px;
+              height: 5.613756037128917px;
+              left: 95.05634292737703%;
+              top: 62.68456822274954%;
+              background: #8b5cf6;
+              border-radius: 50%;
+              animation: sparkleFloat 8.807796811402268s ease-in-out infinite 1.8321874946927084s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 4.219659630010907px;
+              height: 2.4373016537470353px;
+              left: 49.95375769574115%;
+              top: 78.30017415973212%;
+              background: #3b82f6;
+              border-radius: 50%;
+              animation: sparkleFloat 7.489121367550921s ease-in-out infinite 0.73914641579512s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 3.989965973455126px;
+              height: 3.3840585218074017px;
+              left: 47.26548638137391%;
+              top: 92.05815548787739%;
+              background: #3b82f6;
+              border-radius: 50%;
+              animation: sparkleFloat 8.20444047314858s ease-in-out infinite 2.389009273303071s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 5.129091051480742px;
+              height: 2.463160094309186px;
+              left: 84.9326735614325%;
+              top: 24.757611549346947%;
+              background: #ffffff;
+              border-radius: 50%;
+              animation: sparkleFloat 9.615853201341816s ease-in-out infinite 2.4252312914094056s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 2.9496016900488145px;
+              height: 5.6206918164146344px;
+              left: 38.361224219836%;
+              top: 88.23879232685194%;
+              background: #ec4899;
+              border-radius: 50%;
+              animation: sparkleFloat 9.593979312725063s ease-in-out infinite 2.639675583604706s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 5.424017362997237px;
+              height: 5.481959292170152px;
+              left: 87.12105578685441%;
+              top: 39.99518639119686%;
+              background: #ffffff;
+              border-radius: 50%;
+              animation: sparkleFloat 7.663328254095824s ease-in-out infinite 1.0852986885266245s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 2.19304095713316px;
+              height: 3.3897714767686624px;
+              left: 29.44164424953193%;
+              top: 60.14346528599147%;
+              background: #3b82f6;
+              border-radius: 50%;
+              animation: sparkleFloat 8.451337002659919s ease-in-out infinite 0.7868044100724259s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 3.706960534619075px;
+              height: 4.102758721516468px;
+              left: 44.66007472826088%;
+              top: 87.88687084925485%;
+              background: #8b5cf6;
+              border-radius: 50%;
+              animation: sparkleFloat 6.999962023832515s ease-in-out infinite 0.39334402261421564s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 2.0026517478156194px;
+              height: 2.7772946656108375px;
+              left: 60.9642348030075%;
+              top: 41.3894983175652%;
+              background: #ffffff;
+              border-radius: 50%;
+              animation: sparkleFloat 6.311209433124686s ease-in-out infinite 2.4726922905831357s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 5.12035132823545px;
+              height: 3.2108928445691545px;
+              left: 9.054525097814503%;
+              top: 83.26831532034029%;
+              background: #ffffff;
+              border-radius: 50%;
+              animation: sparkleFloat 9.015701815083213s ease-in-out infinite 1.7766588928296216s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 4.486562627782703px;
+              height: 4.051659844743037px;
+              left: 26.42457931217462%;
+              top: 47.96788367232432%;
+              background: #3b82f6;
+              border-radius: 50%;
+              animation: sparkleFloat 6.930226809436805s ease-in-out infinite 2.7380238411434905s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 3.4680192765787035px;
+              height: 5.090065690826716px;
+              left: 39.43128570795563%;
+              top: 63.29038158139725%;
+              background: #ffffff;
+              border-radius: 50%;
+              animation: sparkleFloat 9.42260903096562s ease-in-out infinite 2.4063498298656443s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 3.9964935291625765px;
+              height: 2.669509217669974px;
+              left: 83.3811819748309%;
+              top: 86.24544308479726%;
+              background: #ec4899;
+              border-radius: 50%;
+              animation: sparkleFloat 9.707363094217794s ease-in-out infinite 0.9616940217418095s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 5.4107820487112805px;
+              height: 3.075223350045904px;
+              left: 84.06862363577588%;
+              top: 58.27887090102788%;
+              background: #ec4899;
+              border-radius: 50%;
+              animation: sparkleFloat 9.093819020741265s ease-in-out infinite 0.7774580982886853s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 2.0691645149747324px;
+              height: 2.240676539702473px;
+              left: 6.082284664464133%;
+              top: 43.71713917341696%;
+              background: #3b82f6;
+              border-radius: 50%;
+              animation: sparkleFloat 9.290912516410167s ease-in-out infinite 1.746182521451586s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 4.917556280551306px;
+              height: 4.253222345462319px;
+              left: 92.10426515284126%;
+              top: 35.72142275804813%;
+              background: #8b5cf6;
+              border-radius: 50%;
+              animation: sparkleFloat 6.350518671273163s ease-in-out infinite 0.5859959830440306s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 5.521020779792462px;
+              height: 4.902694423893756px;
+              left: 50.938687984825414%;
+              top: 17.63057813530987%;
+              background: #8b5cf6;
+              border-radius: 50%;
+              animation: sparkleFloat 8.58619928461544s ease-in-out infinite 2.333105534424861s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 2.451498744007674px;
+              height: 3.829624024996961px;
+              left: 50.72857030328959%;
+              top: 40.10014023761806%;
+              background: #3b82f6;
+              border-radius: 50%;
+              animation: sparkleFloat 6.2424789024990766s ease-in-out infinite 2.905543166494217s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 3.6771281121920083px;
+              height: 4.812733725913976px;
+              left: 91.93618539991817%;
+              top: 91.61505353702123%;
+              background: #8b5cf6;
+              border-radius: 50%;
+              animation: sparkleFloat 7.572015354583601s ease-in-out infinite 2.6563436424390665s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 2.2924154186765717px;
+              height: 4.503927857342087px;
+              left: 81.14294397223185%;
+              top: 58.16978193245062%;
+              background: #3b82f6;
+              border-radius: 50%;
+              animation: sparkleFloat 8.6049219862475s ease-in-out infinite 1.7600756930110681s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 3.098409873973496px;
+              height: 5.46627381009007px;
+              left: 5.5595467625566215%;
+              top: 24.71592336247931%;
+              background: #ec4899;
+              border-radius: 50%;
+              animation: sparkleFloat 7.708956119620688s ease-in-out infinite 1.1139567626434435s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 5.909277988565567px;
+              height: 4.704544510755279px;
+              left: 28.12405903124786%;
+              top: 38.81023571356901%;
+              background: #8b5cf6;
+              border-radius: 50%;
+              animation: sparkleFloat 6.179781431993625s ease-in-out infinite 2.6731415308668165s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 4.984217795363075px;
+              height: 5.133417402270487px;
+              left: 33.54507850392905%;
+              top: 88.2113037972127%;
+              background: #3b82f6;
+              border-radius: 50%;
+              animation: sparkleFloat 7.733069363916431s ease-in-out infinite 1.4076892624983772s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 2.332352645117803px;
+              height: 4.087877707132394px;
+              left: 44.59336860790043%;
+              top: 77.51254075439653%;
+              background: #ec4899;
+              border-radius: 50%;
+              animation: sparkleFloat 8.614322424416187s ease-in-out infinite 2.669539921744953s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 5.8502701278122045px;
+              height: 2.3187088999229317px;
+              left: 13.302490115702803%;
+              top: 65.05425651007471%;
+              background: #ec4899;
+              border-radius: 50%;
+              animation: sparkleFloat 8.79340688078777s ease-in-out infinite 2.822009512107142s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 5.190010335540607px;
+              height: 5.796971708354925px;
+              left: 18.792844526751086%;
+              top: 59.33920540654374%;
+              background: #3b82f6;
+              border-radius: 50%;
+              animation: sparkleFloat 6.003598158639635s ease-in-out infinite 1.0378164693087921s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 3.255402581629191px;
+              height: 3.1631428052723063px;
+              left: 77.16929761914754%;
+              top: 73.77258777389142%;
+              background: #8b5cf6;
+              border-radius: 50%;
+              animation: sparkleFloat 9.78710831443113s ease-in-out infinite 0.2568824659206329s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 2.4867791991220396px;
+              height: 4.024423381989872px;
+              left: 73.66296211926755%;
+              top: 13.607563070787698%;
+              background: #8b5cf6;
+              border-radius: 50%;
+              animation: sparkleFloat 7.463955835185606s ease-in-out infinite 1.876849800293789s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 2.4541391740347116px;
+              height: 3.949954394168516px;
+              left: 52.12261549671913%;
+              top: 43.64544852143807%;
+              background: #3b82f6;
+              border-radius: 50%;
+              animation: sparkleFloat 8.775539243423964s ease-in-out infinite 2.741466939412626s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 2.7066862385861996px;
+              height: 2.8756980835539467px;
+              left: 99.68337910272732%;
+              top: 74.99129142401662%;
+              background: #ffffff;
+              border-radius: 50%;
+              animation: sparkleFloat 8.127840561757338s ease-in-out infinite 2.5034285140646526s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+        </div>
+         <div class="max-w-6xl mx-auto px-4 relative z-10">
+             <div class="text-center">
+                 
+                 <h2 class="text-3xl md:text-4xl font-bold mb-6" style="color: #00f5ff;">מה שאתה תלמד כאן</h2>
+                 <p class="text-lg max-w-4xl mx-auto opacity-90 mb-8" style="color: #00f5ff;">כישורים מתקדמים, כלים מקצועיים ידע שיקח אותך הרבה קדימה בקריירה</p>
+                 
+                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                     
+                     <a href="#contact" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors h-11 px-8 text-white glass-effect" style="background-color: #00d4ff; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2);">
+                         
+                         רוצה להשתתף
+                     </a>
+                     
+                     
+                     <a href="#about" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors h-11 px-8 text-white glass-effect" style="background-color: #0099cc; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2);">
+                         
+                         למד עוד
+                     </a>
+                     
+                 </div>
+                 
+             </div>
+         </div>
+     </section>
+    
+
+    <!-- Features Section -->
+    <section class="features">
+        
+        <div style="position: absolute; inset: 0; overflow: hidden;">
+          
+            <div style="
+              position: absolute;
+              width: 5.3650348388047515px;
+              height: 4.282387319630416px;
+              left: 65.4449694838496%;
+              top: 79.08344268446736%;
+              background: #ffffff;
+              border-radius: 50%;
+              animation: sparkleFloat 9.98597870821467s ease-in-out infinite 0.22612591291628048s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 2.219599668606416px;
+              height: 2.7255455016382015px;
+              left: 76.49389373575869%;
+              top: 39.03965420562252%;
+              background: #ec4899;
+              border-radius: 50%;
+              animation: sparkleFloat 6.00719051105456s ease-in-out infinite 0.27471718479991947s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 3.784027288035237px;
+              height: 4.1973166055699505px;
+              left: 95.36254455704693%;
+              top: 11.945884212945723%;
+              background: #8b5cf6;
+              border-radius: 50%;
+              animation: sparkleFloat 9.104250579227145s ease-in-out infinite 0.8196891838579377s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 3.122250446211936px;
+              height: 3.942839858063404px;
+              left: 79.32835745472408%;
+              top: 73.83183288655502%;
+              background: #ffffff;
+              border-radius: 50%;
+              animation: sparkleFloat 6.967371295561801s ease-in-out infinite 2.9427480302096387s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 2.3385924461707197px;
+              height: 3.865318584889964px;
+              left: 5.414419578718244%;
+              top: 99.07677802835745%;
+              background: #ffffff;
+              border-radius: 50%;
+              animation: sparkleFloat 9.145520320756916s ease-in-out infinite 1.236955649446307s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 5.218744958068655px;
+              height: 2.4356726399856523px;
+              left: 40.451606436513856%;
+              top: 33.686794820930565%;
+              background: #ec4899;
+              border-radius: 50%;
+              animation: sparkleFloat 6.34437541509118s ease-in-out infinite 2.0875916898261524s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 3.1972541374962056px;
+              height: 3.3575027740644474px;
+              left: 10.925006937988012%;
+              top: 13.900618930947672%;
+              background: #3b82f6;
+              border-radius: 50%;
+              animation: sparkleFloat 8.581643538669814s ease-in-out infinite 1.966167006540192s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 3.878229846791233px;
+              height: 4.838827808127835px;
+              left: 93.08908152543901%;
+              top: 95.39700373257604%;
+              background: #3b82f6;
+              border-radius: 50%;
+              animation: sparkleFloat 8.70852333435912s ease-in-out infinite 1.9454646518250918s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 2.6008816607062917px;
+              height: 3.473335203225963px;
+              left: 59.48760362629185%;
+              top: 13.906465731823348%;
+              background: #8b5cf6;
+              border-radius: 50%;
+              animation: sparkleFloat 7.842513558684729s ease-in-out infinite 0.3984274821948063s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 3.592054460084239px;
+              height: 4.8934540696610735px;
+              left: 81.4487609640967%;
+              top: 36.89499106578562%;
+              background: #8b5cf6;
+              border-radius: 50%;
+              animation: sparkleFloat 9.562756611531304s ease-in-out infinite 0.6183683769116679s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 2.484856038876704px;
+              height: 4.842172917252693px;
+              left: 45.54715000419538%;
+              top: 18.209552014424435%;
+              background: #8b5cf6;
+              border-radius: 50%;
+              animation: sparkleFloat 8.792914869573615s ease-in-out infinite 0.591511529601922s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 5.319653191979597px;
+              height: 3.8614013515013568px;
+              left: 16.728824820750653%;
+              top: 75.06966133948791%;
+              background: #8b5cf6;
+              border-radius: 50%;
+              animation: sparkleFloat 8.576683448931671s ease-in-out infinite 1.9355484491912192s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 3.5196158299491103px;
+              height: 4.976388681844281px;
+              left: 21.821283217446087%;
+              top: 29.66496657183092%;
+              background: #ec4899;
+              border-radius: 50%;
+              animation: sparkleFloat 8.848629553942626s ease-in-out infinite 1.689359286741261s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 5.877845701367821px;
+              height: 3.7550845599432794px;
+              left: 77.9152668567073%;
+              top: 98.44996087153078%;
+              background: #ffffff;
+              border-radius: 50%;
+              animation: sparkleFloat 7.665650172745733s ease-in-out infinite 2.69806321346283s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 3.5634579223834506px;
+              height: 2.687139350527576px;
+              left: 34.2812311004403%;
+              top: 67.51835126787482%;
+              background: #ec4899;
+              border-radius: 50%;
+              animation: sparkleFloat 9.167188422911165s ease-in-out infinite 2.3758767611910696s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 5.538701002405709px;
+              height: 4.459139685418369px;
+              left: 83.23077755243867%;
+              top: 31.73767446117637%;
+              background: #ffffff;
+              border-radius: 50%;
+              animation: sparkleFloat 8.176726288579943s ease-in-out infinite 0.6427043141368393s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 5.5404555183040625px;
+              height: 2.8068213014365253px;
+              left: 95.5063956461101%;
+              top: 99.91829656499941%;
+              background: #8b5cf6;
+              border-radius: 50%;
+              animation: sparkleFloat 8.971656248826035s ease-in-out infinite 1.0107384121542577s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 2.4006547661579325px;
+              height: 5.890221937348418px;
+              left: 60.61214778883433%;
+              top: 14.573505828859968%;
+              background: #ffffff;
+              border-radius: 50%;
+              animation: sparkleFloat 8.873596926603526s ease-in-out infinite 0.9096604172106232s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 3.7500665382812293px;
+              height: 3.816590446730304px;
+              left: 77.93309408010191%;
+              top: 81.32216615687372%;
+              background: #ec4899;
+              border-radius: 50%;
+              animation: sparkleFloat 9.280872301226248s ease-in-out infinite 2.3287053081793943s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 5.986666635458062px;
+              height: 5.056552399039367px;
+              left: 31.696408131317753%;
+              top: 35.64086898838067%;
+              background: #3b82f6;
+              border-radius: 50%;
+              animation: sparkleFloat 8.449734927743124s ease-in-out infinite 1.6824997651852316s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 5.204809125987128px;
+              height: 5.065939677305591px;
+              left: 91.77361595557856%;
+              top: 13.813496268333514%;
+              background: #ffffff;
+              border-radius: 50%;
+              animation: sparkleFloat 8.993022779472138s ease-in-out infinite 0.8491301067347806s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 5.651242312667108px;
+              height: 2.2618998011663565px;
+              left: 26.385745168106634%;
+              top: 30.92742098423258%;
+              background: #3b82f6;
+              border-radius: 50%;
+              animation: sparkleFloat 7.945981222479325s ease-in-out infinite 2.9652213540449828s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 5.323064009074164px;
+              height: 2.2825609365265094px;
+              left: 29.042584303775676%;
+              top: 66.51785308589292%;
+              background: #3b82f6;
+              border-radius: 50%;
+              animation: sparkleFloat 8.106839373191374s ease-in-out infinite 1.8717614369749902s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 4.040381245276075px;
+              height: 4.463790656084999px;
+              left: 36.21572570654978%;
+              top: 12.074016031757129%;
+              background: #8b5cf6;
+              border-radius: 50%;
+              animation: sparkleFloat 9.979754581075161s ease-in-out infinite 2.6846007358199726s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 3.256277702336903px;
+              height: 5.880375529024088px;
+              left: 68.58651673724134%;
+              top: 83.04598943029785%;
+              background: #ffffff;
+              border-radius: 50%;
+              animation: sparkleFloat 8.223005457205431s ease-in-out infinite 1.8737461962306172s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 5.627247798300219px;
+              height: 3.922224545427924px;
+              left: 34.24987516134473%;
+              top: 89.24489956695697%;
+              background: #8b5cf6;
+              border-radius: 50%;
+              animation: sparkleFloat 7.852140481548646s ease-in-out infinite 2.94463885150498s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 4.378926317323613px;
+              height: 4.760075963363709px;
+              left: 68.89816040717056%;
+              top: 57.38675082920393%;
+              background: #ffffff;
+              border-radius: 50%;
+              animation: sparkleFloat 8.63341438322026s ease-in-out infinite 1.204344316005323s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 3.3853152224762644px;
+              height: 5.294887506775815px;
+              left: 20.827791055416267%;
+              top: 63.623658075591926%;
+              background: #8b5cf6;
+              border-radius: 50%;
+              animation: sparkleFloat 6.389615559452215s ease-in-out infinite 1.134227076618175s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 4.097673889995871px;
+              height: 2.1203898810626023px;
+              left: 41.196535924053336%;
+              top: 80.48120293731682%;
+              background: #8b5cf6;
+              border-radius: 50%;
+              animation: sparkleFloat 6.906851460452444s ease-in-out infinite 1.343617522423525s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 4.0703033447635635px;
+              height: 2.9468568754467284px;
+              left: 40.21371445064531%;
+              top: 69.0705170260293%;
+              background: #8b5cf6;
+              border-radius: 50%;
+              animation: sparkleFloat 8.543605121339048s ease-in-out infinite 1.3285736974502906s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 3.264217621631113px;
+              height: 5.49167966610135px;
+              left: 34.272144368796866%;
+              top: 30.00870664145602%;
+              background: #ec4899;
+              border-radius: 50%;
+              animation: sparkleFloat 8.62965447362767s ease-in-out infinite 0.41939746114417653s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 2.6906312251715674px;
+              height: 4.314982227646427px;
+              left: 52.67648989132153%;
+              top: 84.48505153549883%;
+              background: #ec4899;
+              border-radius: 50%;
+              animation: sparkleFloat 8.104014682172314s ease-in-out infinite 2.7125582636360104s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 5.061420742880327px;
+              height: 3.67611137000196px;
+              left: 99.69140699225763%;
+              top: 66.57016566524325%;
+              background: #ec4899;
+              border-radius: 50%;
+              animation: sparkleFloat 6.744915660803405s ease-in-out infinite 0.2980617021630887s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 4.54743556267042px;
+              height: 3.040755735692474px;
+              left: 81.47638072382391%;
+              top: 22.609682936823074%;
+              background: #3b82f6;
+              border-radius: 50%;
+              animation: sparkleFloat 9.172329197534857s ease-in-out infinite 0.8289238133116552s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 5.569731432575761px;
+              height: 5.605740673943812px;
+              left: 72.21506510046702%;
+              top: 30.726588549894263%;
+              background: #8b5cf6;
+              border-radius: 50%;
+              animation: sparkleFloat 6.490012535344952s ease-in-out infinite 0.6921914904599431s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+        </div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                
+                <h2 class="text-4xl md:text-5xl font-bold mb-4" style="color: #00f5ff;">למה הקורס הזה שונה</h2>
+                
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                
+                      <div class="relative group perspective-1000">
+                        <div class="relative transform-gpu transition-all duration-300 preserve-3d group-hover:rotateY-5">
+                          <!-- Floating background with glass effect -->
+                          <div class="absolute inset-0 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/20"></div>
+                          
+                          <!-- Glow effect -->
+                          <div class="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm"></div>
+                          
+                          <!-- Content -->
+                          <div class="relative z-10 p-8 space-y-4">
+                            <!-- Floating icon -->
+                            <div class="w-16 h-16 bg-gradient-to-br from-cyan-400 to-purple-500 rounded-xl flex items-center justify-center shadow-lg">
+                              <i class="ri-play-circle-line text-2xl text-white"></i>
+                            </div>
+                            
+                            <!-- Title -->
+                            <h3 class="text-xl font-bold text-white bg-gradient-to-r from-blue-200 to-purple-200 bg-clip-text text-transparent">
+                              למידה אינטראקטיבית
+                            </h3>
+                            
+                            <!-- Description -->
+                            <p class="text-blue-100/80 leading-relaxed">
+                              תרגול מעשי על פרויקטים אמיתיים
+                            </p>
+                            
+                            <!-- Floating particles -->
+                            <div class="absolute top-4 right-4 w-2 h-2 bg-blue-400 rounded-full opacity-60 animate-pulse"></div>
+                            <div class="absolute bottom-6 left-6 w-1 h-1 bg-purple-400 rounded-full opacity-40 animate-pulse delay-500"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="relative group perspective-1000">
+                        <div class="relative transform-gpu transition-all duration-300 preserve-3d group-hover:rotateY-5">
+                          <!-- Floating background with glass effect -->
+                          <div class="absolute inset-0 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/20"></div>
+                          
+                          <!-- Glow effect -->
+                          <div class="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm"></div>
+                          
+                          <!-- Content -->
+                          <div class="relative z-10 p-8 space-y-4">
+                            <!-- Floating icon -->
+                            <div class="w-16 h-16 bg-gradient-to-br from-cyan-400 to-purple-500 rounded-xl flex items-center justify-center shadow-lg">
+                              <i class="ri-user-star-line text-2xl text-white"></i>
+                            </div>
+                            
+                            <!-- Title -->
+                            <h3 class="text-xl font-bold text-white bg-gradient-to-r from-blue-200 to-purple-200 bg-clip-text text-transparent">
+                              מנטורים מקצועיים
+                            </h3>
+                            
+                            <!-- Description -->
+                            <p class="text-blue-100/80 leading-relaxed">
+                              ליווי אישי של מומחים בתחום
+                            </p>
+                            
+                            <!-- Floating particles -->
+                            <div class="absolute top-4 right-4 w-2 h-2 bg-blue-400 rounded-full opacity-60 animate-pulse"></div>
+                            <div class="absolute bottom-6 left-6 w-1 h-1 bg-purple-400 rounded-full opacity-40 animate-pulse delay-500"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="relative group perspective-1000">
+                        <div class="relative transform-gpu transition-all duration-300 preserve-3d group-hover:rotateY-5">
+                          <!-- Floating background with glass effect -->
+                          <div class="absolute inset-0 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/20"></div>
+                          
+                          <!-- Glow effect -->
+                          <div class="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm"></div>
+                          
+                          <!-- Content -->
+                          <div class="relative z-10 p-8 space-y-4">
+                            <!-- Floating icon -->
+                            <div class="w-16 h-16 bg-gradient-to-br from-cyan-400 to-purple-500 rounded-xl flex items-center justify-center shadow-lg">
+                              <i class="ri-award-line text-2xl text-white"></i>
+                            </div>
+                            
+                            <!-- Title -->
+                            <h3 class="text-xl font-bold text-white bg-gradient-to-r from-blue-200 to-purple-200 bg-clip-text text-transparent">
+                              תעודת הסמכה
+                            </h3>
+                            
+                            <!-- Description -->
+                            <p class="text-blue-100/80 leading-relaxed">
+                              תעודה מוכרת בתעשייה
+                            </p>
+                            
+                            <!-- Floating particles -->
+                            <div class="absolute top-4 right-4 w-2 h-2 bg-blue-400 rounded-full opacity-60 animate-pulse"></div>
+                            <div class="absolute bottom-6 left-6 w-1 h-1 bg-purple-400 rounded-full opacity-40 animate-pulse delay-500"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="relative group perspective-1000">
+                        <div class="relative transform-gpu transition-all duration-300 preserve-3d group-hover:rotateY-5">
+                          <!-- Floating background with glass effect -->
+                          <div class="absolute inset-0 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/20"></div>
+                          
+                          <!-- Glow effect -->
+                          <div class="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm"></div>
+                          
+                          <!-- Content -->
+                          <div class="relative z-10 p-8 space-y-4">
+                            <!-- Floating icon -->
+                            <div class="w-16 h-16 bg-gradient-to-br from-cyan-400 to-purple-500 rounded-xl flex items-center justify-center shadow-lg">
+                              <i class="ri-team-line text-2xl text-white"></i>
+                            </div>
+                            
+                            <!-- Title -->
+                            <h3 class="text-xl font-bold text-white bg-gradient-to-r from-blue-200 to-purple-200 bg-clip-text text-transparent">
+                              קהילת בוגרים
+                            </h3>
+                            
+                            <!-- Description -->
+                            <p class="text-blue-100/80 leading-relaxed">
+                              רשת מקצועית חזקה לקידום קריירה
+                            </p>
+                            
+                            <!-- Floating particles -->
+                            <div class="absolute top-4 right-4 w-2 h-2 bg-blue-400 rounded-full opacity-60 animate-pulse"></div>
+                            <div class="absolute bottom-6 left-6 w-1 h-1 bg-purple-400 rounded-full opacity-40 animate-pulse delay-500"></div>
+                          </div>
+                        </div>
+                      </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#contact" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors h-11 px-8 text-white" style="background-color: #00d4ff;">
+                    
+                    כל היתרונות
+                </a>
+                <a href="#testimonials" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors h-11 px-8 text-white" style="background-color: #0099cc;">
+                    
+                    הירשם עכשיו
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        
+        <div style="position: absolute; inset: 0; overflow: hidden;">
+          
+            <div style="
+              position: absolute;
+              width: 4.472856868161264px;
+              height: 2.604377515585941px;
+              left: 76.4065323144244%;
+              top: 19.25189292511429%;
+              background: #ffffff;
+              border-radius: 50%;
+              animation: sparkleFloat 9.360883671799657s ease-in-out infinite 0.3233756136426156s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 5.012178920728844px;
+              height: 4.979075621747734px;
+              left: 26.93270717791715%;
+              top: 14.085863452874204%;
+              background: #3b82f6;
+              border-radius: 50%;
+              animation: sparkleFloat 9.850358069187932s ease-in-out infinite 0.8031203745038955s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 5.475742542351421px;
+              height: 4.220636406712261px;
+              left: 16.07673732875986%;
+              top: 1.8675046014920205%;
+              background: #ec4899;
+              border-radius: 50%;
+              animation: sparkleFloat 9.922322866179755s ease-in-out infinite 1.113105079730419s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 2.461489544149378px;
+              height: 5.373166361044957px;
+              left: 23.014663928637958%;
+              top: 36.22082107227493%;
+              background: #ffffff;
+              border-radius: 50%;
+              animation: sparkleFloat 8.189327679787255s ease-in-out infinite 0.6271739673692894s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 5.998426091852043px;
+              height: 4.539597706711116px;
+              left: 30.684233638002134%;
+              top: 67.61162584016233%;
+              background: #ffffff;
+              border-radius: 50%;
+              animation: sparkleFloat 9.446290680952405s ease-in-out infinite 1.7202992521879144s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 2.3740312339251592px;
+              height: 3.3965400985619323px;
+              left: 21.169930353246002%;
+              top: 54.14810058706304%;
+              background: #ec4899;
+              border-radius: 50%;
+              animation: sparkleFloat 9.545433398139261s ease-in-out infinite 1.8267344263471328s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 4.031831255184654px;
+              height: 2.209382095480189px;
+              left: 8.899838927004101%;
+              top: 45.67983669088284%;
+              background: #ec4899;
+              border-radius: 50%;
+              animation: sparkleFloat 9.879378041132567s ease-in-out infinite 1.7582089417983862s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 4.6559342289544725px;
+              height: 3.906298767678259px;
+              left: 78.83648994179482%;
+              top: 61.48354032612191%;
+              background: #8b5cf6;
+              border-radius: 50%;
+              animation: sparkleFloat 9.135601006965544s ease-in-out infinite 0.16238790327866348s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 4.550595950875996px;
+              height: 2.912238397677989px;
+              left: 91.4618665110237%;
+              top: 16.209029835721466%;
+              background: #ec4899;
+              border-radius: 50%;
+              animation: sparkleFloat 8.724273354571901s ease-in-out infinite 2.66182408416311s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 5.975917195983881px;
+              height: 4.751044596080238px;
+              left: 65.99764705467871%;
+              top: 35.293403395329136%;
+              background: #8b5cf6;
+              border-radius: 50%;
+              animation: sparkleFloat 9.192212628577431s ease-in-out infinite 1.4533893756142047s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 5.523003252574506px;
+              height: 2.545474409274196px;
+              left: 26.61708033161507%;
+              top: 15.850344968445707%;
+              background: #ffffff;
+              border-radius: 50%;
+              animation: sparkleFloat 8.66859798348374s ease-in-out infinite 1.9545697321598294s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 3.6292677571723515px;
+              height: 2.280182777679857px;
+              left: 70.24504889133762%;
+              top: 54.15466020928454%;
+              background: #3b82f6;
+              border-radius: 50%;
+              animation: sparkleFloat 6.2482885425201555s ease-in-out infinite 2.5780422107183307s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 2.6525845487949304px;
+              height: 4.168843017803145px;
+              left: 15.571063981284993%;
+              top: 12.588257210782938%;
+              background: #3b82f6;
+              border-radius: 50%;
+              animation: sparkleFloat 9.159795586204574s ease-in-out infinite 1.3652915823730698s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 3.545530252758917px;
+              height: 3.317144517123665px;
+              left: 21.02004305530051%;
+              top: 38.60455766852644%;
+              background: #3b82f6;
+              border-radius: 50%;
+              animation: sparkleFloat 9.716203194211353s ease-in-out infinite 1.3856942246832231s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 3.7645120229951794px;
+              height: 3.4765040141954224px;
+              left: 30.28021320181934%;
+              top: 44.79949927567712%;
+              background: #3b82f6;
+              border-radius: 50%;
+              animation: sparkleFloat 6.936963113268726s ease-in-out infinite 0.3595070202930343s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 5.169945686552003px;
+              height: 3.5228379764278186px;
+              left: 99.65690768026278%;
+              top: 35.48474035888152%;
+              background: #ffffff;
+              border-radius: 50%;
+              animation: sparkleFloat 8.649541303844556s ease-in-out infinite 2.859930204639449s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 2.0135142156173367px;
+              height: 4.897538806547988px;
+              left: 31.37613432460926%;
+              top: 91.11529590496289%;
+              background: #3b82f6;
+              border-radius: 50%;
+              animation: sparkleFloat 6.494472822421721s ease-in-out infinite 2.240538593361286s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 3.3226060647429314px;
+              height: 2.9647254164639882px;
+              left: 50.57756790796125%;
+              top: 94.28635004939184%;
+              background: #8b5cf6;
+              border-radius: 50%;
+              animation: sparkleFloat 6.856124137795346s ease-in-out infinite 1.2847831002682124s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 4.630968069729233px;
+              height: 5.99950467460998px;
+              left: 41.17580945584513%;
+              top: 36.16130100817314%;
+              background: #ffffff;
+              border-radius: 50%;
+              animation: sparkleFloat 8.316424759078194s ease-in-out infinite 0.24361703263723578s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 5.541643802335843px;
+              height: 5.1730490875263655px;
+              left: 58.543941210923236%;
+              top: 19.309823943088567%;
+              background: #ec4899;
+              border-radius: 50%;
+              animation: sparkleFloat 6.7751773891124145s ease-in-out infinite 2.7165996191022295s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 2.0789416150382922px;
+              height: 5.097710153317809px;
+              left: 68.6241200601916%;
+              top: 28.28916467383373%;
+              background: #3b82f6;
+              border-radius: 50%;
+              animation: sparkleFloat 7.380841402049753s ease-in-out infinite 1.125677133083565s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 5.521024631402435px;
+              height: 3.4343604344936223px;
+              left: 34.917484408493216%;
+              top: 77.01400255481214%;
+              background: #8b5cf6;
+              border-radius: 50%;
+              animation: sparkleFloat 9.287920285434739s ease-in-out infinite 1.0366072758373397s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 2.3175228206259564px;
+              height: 2.7296482968807787px;
+              left: 65.05134834020916%;
+              top: 71.05948020822387%;
+              background: #ffffff;
+              border-radius: 50%;
+              animation: sparkleFloat 7.177871689980638s ease-in-out infinite 0.9830786414171769s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 4.937383002598178px;
+              height: 4.514035360831138px;
+              left: 72.61465354810156%;
+              top: 33.16864138035092%;
+              background: #ec4899;
+              border-radius: 50%;
+              animation: sparkleFloat 7.154130422010487s ease-in-out infinite 0.5073586380094085s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 3.389258970502902px;
+              height: 5.870287187514055px;
+              left: 95.53627203161336%;
+              top: 83.93152756565578%;
+              background: #ec4899;
+              border-radius: 50%;
+              animation: sparkleFloat 9.460389971949652s ease-in-out infinite 0.4568374830744103s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 3.2861216846172137px;
+              height: 3.9678330594094127px;
+              left: 97.7229694640337%;
+              top: 37.47442775424889%;
+              background: #8b5cf6;
+              border-radius: 50%;
+              animation: sparkleFloat 8.606419717313688s ease-in-out infinite 0.9712416079031065s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 4.10725662662108px;
+              height: 5.259814270982714px;
+              left: 91.37652812372082%;
+              top: 65.75185736282292%;
+              background: #ffffff;
+              border-radius: 50%;
+              animation: sparkleFloat 8.570202399131418s ease-in-out infinite 2.5128859489386457s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 2.1172191902322526px;
+              height: 3.9659689296702125px;
+              left: 21.187154037738843%;
+              top: 64.75584423917546%;
+              background: #ffffff;
+              border-radius: 50%;
+              animation: sparkleFloat 7.28538936825592s ease-in-out infinite 2.7693771142447408s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 4.36425788935213px;
+              height: 5.762547753375648px;
+              left: 69.03972435401975%;
+              top: 1.1945517498518798%;
+              background: #8b5cf6;
+              border-radius: 50%;
+              animation: sparkleFloat 7.1983337097408615s ease-in-out infinite 0.9616505186445057s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 5.689484571327741px;
+              height: 2.526181567753483px;
+              left: 84.02222279117218%;
+              top: 40.35073006380326%;
+              background: #8b5cf6;
+              border-radius: 50%;
+              animation: sparkleFloat 6.891929602384829s ease-in-out infinite 1.9602417467553066s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 5.339087150762909px;
+              height: 2.148135892221469px;
+              left: 25.13693108072007%;
+              top: 91.41270681987808%;
+              background: #3b82f6;
+              border-radius: 50%;
+              animation: sparkleFloat 6.122997637761352s ease-in-out infinite 0.32920085066188864s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 3.7248999880138993px;
+              height: 4.616925636370494px;
+              left: 54.58515000718718%;
+              top: 35.640292986220956%;
+              background: #8b5cf6;
+              border-radius: 50%;
+              animation: sparkleFloat 8.064946403110742s ease-in-out infinite 0.2666717348742067s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 2.827652286866073px;
+              height: 3.4075071665956997px;
+              left: 17.216292163027692%;
+              top: 86.79700681044848%;
+              background: #3b82f6;
+              border-radius: 50%;
+              animation: sparkleFloat 6.951662830065704s ease-in-out infinite 0.35264016038960266s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 4.875209143363401px;
+              height: 2.9618571318834928px;
+              left: 67.0077702972837%;
+              top: 23.540254415680607%;
+              background: #ffffff;
+              border-radius: 50%;
+              animation: sparkleFloat 7.7359196558797185s ease-in-out infinite 1.5078169798698102s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 2.9976653166396865px;
+              height: 5.686115899315638px;
+              left: 7.702371828660148%;
+              top: 13.506899531987472%;
+              background: #3b82f6;
+              border-radius: 50%;
+              animation: sparkleFloat 8.56278989916069s ease-in-out infinite 1.4609712329703173s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+        </div>
+        
+        <!-- Animated background particles -->
+        <div class="absolute inset-0">
+            
+                <div class="absolute w-2 h-2 bg-blue-400/20 rounded-full animate-pulse" style="left: 53.90720752458571%; top: 95.68457614375669%; animation-delay: 0s;"></div>
+            
+                <div class="absolute w-2 h-2 bg-blue-400/20 rounded-full animate-pulse" style="left: 78.85507006088982%; top: 26.136165846613714%; animation-delay: 0.2s;"></div>
+            
+                <div class="absolute w-2 h-2 bg-blue-400/20 rounded-full animate-pulse" style="left: 57.569338024413355%; top: 94.64252161573683%; animation-delay: 0.4s;"></div>
+            
+                <div class="absolute w-2 h-2 bg-blue-400/20 rounded-full animate-pulse" style="left: 10.775607579420065%; top: 86.93763275260565%; animation-delay: 0.6000000000000001s;"></div>
+            
+                <div class="absolute w-2 h-2 bg-blue-400/20 rounded-full animate-pulse" style="left: 86.30410553500103%; top: 13.468290866448084%; animation-delay: 0.8s;"></div>
+            
+                <div class="absolute w-2 h-2 bg-blue-400/20 rounded-full animate-pulse" style="left: 39.26566364526425%; top: 79.94515347950896%; animation-delay: 1s;"></div>
+            
+                <div class="absolute w-2 h-2 bg-blue-400/20 rounded-full animate-pulse" style="left: 20.402844068052584%; top: 53.9573246007269%; animation-delay: 1.2000000000000002s;"></div>
+            
+                <div class="absolute w-2 h-2 bg-blue-400/20 rounded-full animate-pulse" style="left: 78.19855763412285%; top: 67.84388943329341%; animation-delay: 1.4000000000000001s;"></div>
+            
+                <div class="absolute w-2 h-2 bg-blue-400/20 rounded-full animate-pulse" style="left: 62.50341858759637%; top: 56.92660343329092%; animation-delay: 1.6s;"></div>
+            
+                <div class="absolute w-2 h-2 bg-blue-400/20 rounded-full animate-pulse" style="left: 23.130190864290768%; top: 47.952661677827116%; animation-delay: 1.8s;"></div>
+            
+                <div class="absolute w-2 h-2 bg-blue-400/20 rounded-full animate-pulse" style="left: 9.094373450521676%; top: 36.52816042476393%; animation-delay: 2s;"></div>
+            
+                <div class="absolute w-2 h-2 bg-blue-400/20 rounded-full animate-pulse" style="left: 78.25080764475325%; top: 40.943419056860385%; animation-delay: 2.2s;"></div>
+            
+                <div class="absolute w-2 h-2 bg-blue-400/20 rounded-full animate-pulse" style="left: 13.89583034509122%; top: 52.93226003484688%; animation-delay: 2.4000000000000004s;"></div>
+            
+                <div class="absolute w-2 h-2 bg-blue-400/20 rounded-full animate-pulse" style="left: 15.354126848481398%; top: 88.68574219642544%; animation-delay: 2.6s;"></div>
+            
+                <div class="absolute w-2 h-2 bg-blue-400/20 rounded-full animate-pulse" style="left: 95.2542926939415%; top: 67.70414996468884%; animation-delay: 2.8000000000000003s;"></div>
+            
+                <div class="absolute w-2 h-2 bg-blue-400/20 rounded-full animate-pulse" style="left: 33.96019975103457%; top: 11.845337130983602%; animation-delay: 3s;"></div>
+            
+                <div class="absolute w-2 h-2 bg-blue-400/20 rounded-full animate-pulse" style="left: 91.50577350005788%; top: 26.997812886656803%; animation-delay: 3.2s;"></div>
+            
+                <div class="absolute w-2 h-2 bg-blue-400/20 rounded-full animate-pulse" style="left: 43.460986023762935%; top: 59.395810324787625%; animation-delay: 3.4000000000000004s;"></div>
+            
+                <div class="absolute w-2 h-2 bg-blue-400/20 rounded-full animate-pulse" style="left: 50.475662503042095%; top: 7.243645735643955%; animation-delay: 3.6s;"></div>
+            
+                <div class="absolute w-2 h-2 bg-blue-400/20 rounded-full animate-pulse" style="left: 36.52876383853022%; top: 36.12152428558078%; animation-delay: 3.8000000000000003s;"></div>
+            
+        </div>
+        
+        
+        <div class="max-w-6xl mx-auto px-6 relative z-10">
+            
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-blue-200 to-purple-200 bg-clip-text text-transparent">
+                סיפורי הצלחה של הבוגרים
+            </h2>
+            
+            
+            <!-- Testimonials grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                
+                    <div class="relative group">
+                        <div class="absolute inset-0 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg rounded-2xl shadow-xl border border-white/20"></div>
+                        <div class="relative z-10 p-6 space-y-4">
+                            <!-- Quote icon -->
+                            <div class="w-8 h-8 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full flex items-center justify-center mb-4">
+                                <span class="text-white text-sm">"</span>
+                            </div>
+                            
+                            <!-- Rating -->
+                            <div class="flex mb-3">
+                                <span style="color: #fbbf24; font-size: 1rem;">★</span><span style="color: #fbbf24; font-size: 1rem;">★</span><span style="color: #fbbf24; font-size: 1rem;">★</span><span style="color: #fbbf24; font-size: 1rem;">★</span><span style="color: #fbbf24; font-size: 1rem;">★</span>
+                            </div>
+                            
+                            <!-- Content -->
+                            <p class="text-blue-100/90 italic leading-relaxed">"הקורס שינה לי את החיים! מתכנתת מתחילה לתפקיד בכיר בחברת הייטק"</p>
+                            
+                            <!-- Author info -->
+                            <div class="flex items-center gap-3 pt-4">
+                                <div class="w-12 h-12 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full flex items-center justify-center text-white font-bold">
+                                    מ
+                                </div>
+                                <div>
+                                    <p class="text-white font-semibold">מיכל רוזן</p>
+                                    <p class="text-blue-200/70 text-sm">מפתחת Full Stack</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="relative group">
+                        <div class="absolute inset-0 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg rounded-2xl shadow-xl border border-white/20"></div>
+                        <div class="relative z-10 p-6 space-y-4">
+                            <!-- Quote icon -->
+                            <div class="w-8 h-8 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full flex items-center justify-center mb-4">
+                                <span class="text-white text-sm">"</span>
+                            </div>
+                            
+                            <!-- Rating -->
+                            <div class="flex mb-3">
+                                <span style="color: #fbbf24; font-size: 1rem;">★</span><span style="color: #fbbf24; font-size: 1rem;">★</span><span style="color: #fbbf24; font-size: 1rem;">★</span><span style="color: #fbbf24; font-size: 1rem;">★</span><span style="color: #fbbf24; font-size: 1rem;">★</span>
+                            </div>
+                            
+                            <!-- Content -->
+                            <p class="text-blue-100/90 italic leading-relaxed">"התוכן המעשי והמנטורינג האישי עזרו לי לעשות מעבר קריירה מוצלח"</p>
+                            
+                            <!-- Author info -->
+                            <div class="flex items-center gap-3 pt-4">
+                                <div class="w-12 h-12 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full flex items-center justify-center text-white font-bold">
+                                    ד
+                                </div>
+                                <div>
+                                    <p class="text-white font-semibold">דני שלום</p>
+                                    <p class="text-blue-200/70 text-sm">UX Designer</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#contact" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors h-11 px-8 text-white" style="background-color: #00d4ff;">
+                    
+                    עוד סיפורים
+                </a>
+                <a href="#about" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors h-11 px-8 text-white" style="background-color: #0099cc;">
+                    
+                    הצטרף אלינו
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        
+        <div style="position: absolute; inset: 0; overflow: hidden;">
+          
+            <div style="
+              position: absolute;
+              width: 3.06331981339127px;
+              height: 4.489505542689344px;
+              left: 85.51626213356658%;
+              top: 98.20490772113757%;
+              background: #3b82f6;
+              border-radius: 50%;
+              animation: sparkleFloat 8.563053679696647s ease-in-out infinite 1.8577291714996838s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 5.210544094372047px;
+              height: 2.282281521591021px;
+              left: 43.274208234137554%;
+              top: 40.39235244263155%;
+              background: #ffffff;
+              border-radius: 50%;
+              animation: sparkleFloat 9.9049113103087s ease-in-out infinite 2.7892055861875633s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 3.99325914768781px;
+              height: 4.955628478403993px;
+              left: 11.472152168886584%;
+              top: 17.290348382869603%;
+              background: #3b82f6;
+              border-radius: 50%;
+              animation: sparkleFloat 8.074844833152232s ease-in-out infinite 0.5260709488478055s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 3.4488620545308764px;
+              height: 4.22367000218008px;
+              left: 64.21108797871233%;
+              top: 8.058229022006714%;
+              background: #ffffff;
+              border-radius: 50%;
+              animation: sparkleFloat 7.4681274848583605s ease-in-out infinite 0.004921106771399453s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 5.934388470511512px;
+              height: 5.60991769410692px;
+              left: 88.12639701053287%;
+              top: 47.588211263254934%;
+              background: #ffffff;
+              border-radius: 50%;
+              animation: sparkleFloat 6.6222850265839455s ease-in-out infinite 2.7160194548735057s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 2.797022795463559px;
+              height: 5.266825209997085px;
+              left: 41.880160996360694%;
+              top: 15.569515432935898%;
+              background: #ec4899;
+              border-radius: 50%;
+              animation: sparkleFloat 8.297233249643103s ease-in-out infinite 1.6992852618562284s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 2.763983344438832px;
+              height: 4.182112295671778px;
+              left: 8.793374046250978%;
+              top: 53.93174994780004%;
+              background: #ffffff;
+              border-radius: 50%;
+              animation: sparkleFloat 6.135591723994997s ease-in-out infinite 2.168818946146121s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 2.513459476436981px;
+              height: 5.5647723636021045px;
+              left: 24.206518803503073%;
+              top: 57.55719293556714%;
+              background: #3b82f6;
+              border-radius: 50%;
+              animation: sparkleFloat 7.357886093759074s ease-in-out infinite 1.0826855693685746s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 3.6476184799587954px;
+              height: 4.129249925409102px;
+              left: 23.89653753990667%;
+              top: 45.74769439425095%;
+              background: #ffffff;
+              border-radius: 50%;
+              animation: sparkleFloat 7.4094038835102225s ease-in-out infinite 0.3504829173560243s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 3.4203448840201816px;
+              height: 4.338452731547093px;
+              left: 90.89663214940083%;
+              top: 36.89376280703775%;
+              background: #3b82f6;
+              border-radius: 50%;
+              animation: sparkleFloat 6.266508635425856s ease-in-out infinite 0.046388720656196925s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 4.018538273555603px;
+              height: 2.5958340856650364px;
+              left: 52.79945284845242%;
+              top: 57.08689927936048%;
+              background: #3b82f6;
+              border-radius: 50%;
+              animation: sparkleFloat 6.651827277671584s ease-in-out infinite 2.7363415732602747s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 4.065166600252791px;
+              height: 2.5794969959949823px;
+              left: 33.265804689387856%;
+              top: 86.89051486139773%;
+              background: #3b82f6;
+              border-radius: 50%;
+              animation: sparkleFloat 9.026274821553642s ease-in-out infinite 2.8782071031329224s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 3.7173177485641062px;
+              height: 5.785975177297885px;
+              left: 89.72303243741598%;
+              top: 78.50935305584723%;
+              background: #ec4899;
+              border-radius: 50%;
+              animation: sparkleFloat 8.769563975975453s ease-in-out infinite 2.0268358367952515s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 2.5397211299180715px;
+              height: 5.6940004268320195px;
+              left: 19.463360272433793%;
+              top: 38.38560283130376%;
+              background: #ec4899;
+              border-radius: 50%;
+              animation: sparkleFloat 8.038471335929886s ease-in-out infinite 0.5817544816472262s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 3.833853137790777px;
+              height: 2.375552827378997px;
+              left: 97.1481512256806%;
+              top: 56.55122327135946%;
+              background: #3b82f6;
+              border-radius: 50%;
+              animation: sparkleFloat 6.70998329937451s ease-in-out infinite 0.399629953809974s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 5.747672022695414px;
+              height: 3.23557687329596px;
+              left: 49.285398371574054%;
+              top: 33.348708059825285%;
+              background: #3b82f6;
+              border-radius: 50%;
+              animation: sparkleFloat 9.86181679485918s ease-in-out infinite 1.4295016619752907s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 4.046600901581349px;
+              height: 4.916614177940625px;
+              left: 48.482790790147824%;
+              top: 61.000601696532875%;
+              background: #8b5cf6;
+              border-radius: 50%;
+              animation: sparkleFloat 7.064244437615571s ease-in-out infinite 0.2747639974724312s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 5.5713909715366805px;
+              height: 5.968414332900384px;
+              left: 66.76720024691647%;
+              top: 49.42506745302391%;
+              background: #ec4899;
+              border-radius: 50%;
+              animation: sparkleFloat 8.543850968423035s ease-in-out infinite 1.246867845120569s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 5.837850207866499px;
+              height: 5.463771466800875px;
+              left: 18.685746560510708%;
+              top: 0.07268126725132884%;
+              background: #8b5cf6;
+              border-radius: 50%;
+              animation: sparkleFloat 9.793754703506263s ease-in-out infinite 1.5846279028556114s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 2.9339219596077806px;
+              height: 5.511318378652273px;
+              left: 8.137223853681686%;
+              top: 96.19843969873689%;
+              background: #ffffff;
+              border-radius: 50%;
+              animation: sparkleFloat 8.298948985487801s ease-in-out infinite 1.1567515915436304s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 2.7760547404103724px;
+              height: 2.8785559742615607px;
+              left: 33.00573071137845%;
+              top: 16.97848174732345%;
+              background: #3b82f6;
+              border-radius: 50%;
+              animation: sparkleFloat 7.033390063102657s ease-in-out infinite 0.2086083410856472s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 4.271853332467231px;
+              height: 2.7845161904030804px;
+              left: 89.19488522317052%;
+              top: 40.58231942020534%;
+              background: #3b82f6;
+              border-radius: 50%;
+              animation: sparkleFloat 8.195751477367736s ease-in-out infinite 1.634384559572147s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 4.969006884760672px;
+              height: 2.8929724923069973px;
+              left: 17.90264448912753%;
+              top: 92.84489123893053%;
+              background: #ffffff;
+              border-radius: 50%;
+              animation: sparkleFloat 9.425246256207323s ease-in-out infinite 0.24340973057349713s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 3.8999622881746454px;
+              height: 5.361094821722795px;
+              left: 13.05102780126961%;
+              top: 1.5531535050447243%;
+              background: #ec4899;
+              border-radius: 50%;
+              animation: sparkleFloat 9.463677032992711s ease-in-out infinite 0.36252850273958626s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 2.6075376973233326px;
+              height: 3.1511833400185036px;
+              left: 88.67142860301237%;
+              top: 58.73165414841144%;
+              background: #ec4899;
+              border-radius: 50%;
+              animation: sparkleFloat 8.492974268854194s ease-in-out infinite 2.6676641283934464s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 3.0829395120371617px;
+              height: 4.143729124338059px;
+              left: 29.781228315767716%;
+              top: 74.62690444747918%;
+              background: #ec4899;
+              border-radius: 50%;
+              animation: sparkleFloat 9.163936905036596s ease-in-out infinite 0.4244166620233196s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 5.724210262440184px;
+              height: 2.6963285934048358px;
+              left: 90.17644096524783%;
+              top: 21.28776294228869%;
+              background: #3b82f6;
+              border-radius: 50%;
+              animation: sparkleFloat 7.293449505470397s ease-in-out infinite 2.3741010883131684s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 3.7158746523803083px;
+              height: 5.411970371570057px;
+              left: 96.6198474557646%;
+              top: 96.86323231966259%;
+              background: #8b5cf6;
+              border-radius: 50%;
+              animation: sparkleFloat 9.679877576138757s ease-in-out infinite 0.503112410163176s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 4.249293950573576px;
+              height: 3.2838878467565378px;
+              left: 5.916855622965167%;
+              top: 85.73347956207283%;
+              background: #ec4899;
+              border-radius: 50%;
+              animation: sparkleFloat 9.17243140036648s ease-in-out infinite 0.5697220053457088s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 2.6325759066438565px;
+              height: 4.15152433761445px;
+              left: 16.135985055050604%;
+              top: 53.56992678129308%;
+              background: #ffffff;
+              border-radius: 50%;
+              animation: sparkleFloat 6.183587794923276s ease-in-out infinite 1.1729244363738645s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 4.873603746761649px;
+              height: 4.918148713633185px;
+              left: 12.164355165421615%;
+              top: 69.04050211174575%;
+              background: #3b82f6;
+              border-radius: 50%;
+              animation: sparkleFloat 8.730652089353754s ease-in-out infinite 1.6528423728543946s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 5.9380683298275585px;
+              height: 5.065201143150799px;
+              left: 91.50247360123367%;
+              top: 37.29634813095196%;
+              background: #8b5cf6;
+              border-radius: 50%;
+              animation: sparkleFloat 8.827478626839266s ease-in-out infinite 1.5951281670669513s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 3.7289711577767366px;
+              height: 5.68521692862506px;
+              left: 64.93442222831652%;
+              top: 5.494836156283611%;
+              background: #8b5cf6;
+              border-radius: 50%;
+              animation: sparkleFloat 7.074353101452905s ease-in-out infinite 2.7553818733253794s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 4.279639836457321px;
+              height: 3.1851430854075335px;
+              left: 57.264724776464604%;
+              top: 46.91562211857217%;
+              background: #8b5cf6;
+              border-radius: 50%;
+              animation: sparkleFloat 7.414863886246957s ease-in-out infinite 2.8772346415846286s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 5.367680774094092px;
+              height: 4.226688441531934px;
+              left: 75.31726134513606%;
+              top: 9.299556608915804%;
+              background: #ffffff;
+              border-radius: 50%;
+              animation: sparkleFloat 7.204843743744474s ease-in-out infinite 0.17727450200473394s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+        </div>
+        <div class="max-w-6xl mx-auto px-4 relative z-10">
+            <div class="text-center mb-12">
+                
+                <h2 class="text-3xl md:text-4xl font-bold mb-6" style="color: #00f5ff;">המסע שלך מתחיל כאן</h2>
+                <p class="text-lg max-w-4xl mx-auto opacity-90" style="color: #00f5ff;">אנחנו מספקים חוויית למידה דיגיטלית מהפכנית עם מנטורים מקצועיים ותוכן מעודכן</p>
+            </div>
+            
+            
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#contact" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors h-11 px-8 text-white" style="background-color: #00d4ff;">
+                    
+                    הסיפור שלנו
+                </a>
+                <a href="#pricing" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors h-11 px-8 text-white" style="background-color: #0099cc;">
+                    
+                    פגוש את המרצים
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        
+        <div style="position: absolute; inset: 0; overflow: hidden;">
+          
+            <div style="
+              position: absolute;
+              width: 2.9416625471250715px;
+              height: 2.736757807926541px;
+              left: 94.0244065511967%;
+              top: 13.368725668604453%;
+              background: #ec4899;
+              border-radius: 50%;
+              animation: sparkleFloat 8.822996271014187s ease-in-out infinite 0.8663482106234992s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 5.184139830168477px;
+              height: 4.034126758649878px;
+              left: 46.78551247974294%;
+              top: 40.13381690385507%;
+              background: #ffffff;
+              border-radius: 50%;
+              animation: sparkleFloat 7.18603477955805s ease-in-out infinite 0.0801452402980406s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 2.1931515958680405px;
+              height: 2.268755964419067px;
+              left: 86.70675459288299%;
+              top: 99.07198181987945%;
+              background: #ffffff;
+              border-radius: 50%;
+              animation: sparkleFloat 6.901306136340587s ease-in-out infinite 1.589521963145351s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 4.8285260406233235px;
+              height: 3.851222166553412px;
+              left: 52.013066707121205%;
+              top: 27.407869206098834%;
+              background: #ffffff;
+              border-radius: 50%;
+              animation: sparkleFloat 8.3159532542385s ease-in-out infinite 0.7464553802440573s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 4.903317962348442px;
+              height: 4.294346847889303px;
+              left: 52.868445790712556%;
+              top: 41.393703057569134%;
+              background: #3b82f6;
+              border-radius: 50%;
+              animation: sparkleFloat 8.65843664495414s ease-in-out infinite 2.2786360032560173s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 4.418190454262647px;
+              height: 2.6492907726198878px;
+              left: 96.72683797851116%;
+              top: 33.35225039386975%;
+              background: #ec4899;
+              border-radius: 50%;
+              animation: sparkleFloat 6.185490462624324s ease-in-out infinite 2.761904260746826s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 2.4069366352261037px;
+              height: 5.4472046740920455px;
+              left: 17.220043135068163%;
+              top: 18.99605692222668%;
+              background: #ec4899;
+              border-radius: 50%;
+              animation: sparkleFloat 6.622788369631499s ease-in-out infinite 0.2046353791431762s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 3.414008343261906px;
+              height: 5.567033140477631px;
+              left: 24.689668463834124%;
+              top: 47.20369147432753%;
+              background: #ec4899;
+              border-radius: 50%;
+              animation: sparkleFloat 8.089003169420337s ease-in-out infinite 1.3431258745920864s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 4.380192010622331px;
+              height: 2.4753684785974377px;
+              left: 14.878757455281132%;
+              top: 71.77732723883904%;
+              background: #ffffff;
+              border-radius: 50%;
+              animation: sparkleFloat 9.079183277933259s ease-in-out infinite 1.4191108569753157s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 2.135678150975108px;
+              height: 3.420294842334578px;
+              left: 13.705699954684947%;
+              top: 47.94706121585666%;
+              background: #8b5cf6;
+              border-radius: 50%;
+              animation: sparkleFloat 7.427460911285602s ease-in-out infinite 1.7519117945822504s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 2.6316370485021463px;
+              height: 4.348928055312562px;
+              left: 53.42166679808486%;
+              top: 71.13776991799057%;
+              background: #ffffff;
+              border-radius: 50%;
+              animation: sparkleFloat 7.6970219289270165s ease-in-out infinite 1.2090179616774739s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 3.5456249292248767px;
+              height: 3.655331336311592px;
+              left: 32.938377525906844%;
+              top: 2.2246029263391254%;
+              background: #ec4899;
+              border-radius: 50%;
+              animation: sparkleFloat 8.906923975871496s ease-in-out infinite 1.4145970610713057s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 2.0344990501764704px;
+              height: 3.7122393084431105px;
+              left: 90.62982237145533%;
+              top: 13.466389846765459%;
+              background: #3b82f6;
+              border-radius: 50%;
+              animation: sparkleFloat 8.466374756227056s ease-in-out infinite 2.1539809699333787s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 3.5915080603166007px;
+              height: 2.1334513921698477px;
+              left: 83.66502204438643%;
+              top: 91.62191395480178%;
+              background: #ec4899;
+              border-radius: 50%;
+              animation: sparkleFloat 8.733873620283994s ease-in-out infinite 0.0175403675102076s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 3.4489927053580787px;
+              height: 4.993963663221168px;
+              left: 97.27791669596233%;
+              top: 70.2780361047853%;
+              background: #8b5cf6;
+              border-radius: 50%;
+              animation: sparkleFloat 7.3330542113333514s ease-in-out infinite 2.8035085466558956s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 4.129446599893123px;
+              height: 3.0379996991099336px;
+              left: 65.56059634092716%;
+              top: 99.24281964575266%;
+              background: #ffffff;
+              border-radius: 50%;
+              animation: sparkleFloat 8.513200481736733s ease-in-out infinite 2.2400208127372734s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 3.801236355162403px;
+              height: 3.0203383214260304px;
+              left: 10.636236201529325%;
+              top: 36.42866645066112%;
+              background: #ffffff;
+              border-radius: 50%;
+              animation: sparkleFloat 6.791314816853194s ease-in-out infinite 2.331726876377046s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 5.680324136917394px;
+              height: 2.266961687060958px;
+              left: 50.70785858262352%;
+              top: 50.9526298171029%;
+              background: #8b5cf6;
+              border-radius: 50%;
+              animation: sparkleFloat 7.583344658295814s ease-in-out infinite 0.16557344267062446s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 3.4102846108629237px;
+              height: 2.7123377210646558px;
+              left: 5.459171262448248%;
+              top: 64.533680926902%;
+              background: #8b5cf6;
+              border-radius: 50%;
+              animation: sparkleFloat 6.119857837458245s ease-in-out infinite 2.1972137756597285s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 3.2017521564612705px;
+              height: 5.853435518289762px;
+              left: 57.38309810730776%;
+              top: 9.287994529392074%;
+              background: #3b82f6;
+              border-radius: 50%;
+              animation: sparkleFloat 6.089100515916886s ease-in-out infinite 0.3311059522376043s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 2.3664675029500857px;
+              height: 2.9797407193199588px;
+              left: 63.65909032605085%;
+              top: 22.99879373235727%;
+              background: #3b82f6;
+              border-radius: 50%;
+              animation: sparkleFloat 6.513352115474818s ease-in-out infinite 1.5682271123268707s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 5.146032535125215px;
+              height: 2.3696810512489517px;
+              left: 77.83984065557883%;
+              top: 36.88064285228582%;
+              background: #3b82f6;
+              border-radius: 50%;
+              animation: sparkleFloat 7.672350582426047s ease-in-out infinite 1.093792449755779s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 2.829075819565538px;
+              height: 4.773398803828945px;
+              left: 60.205365638964004%;
+              top: 53.759737440943844%;
+              background: #ffffff;
+              border-radius: 50%;
+              animation: sparkleFloat 9.72464298011324s ease-in-out infinite 0.25308819899113133s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 4.7474404949328575px;
+              height: 5.074733492968578px;
+              left: 39.20210671007421%;
+              top: 80.19694601509741%;
+              background: #ffffff;
+              border-radius: 50%;
+              animation: sparkleFloat 6.371753599076534s ease-in-out infinite 1.0842155312032582s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 2.7675697697575967px;
+              height: 3.6460256665203166px;
+              left: 11.654010674486626%;
+              top: 24.876896065420574%;
+              background: #3b82f6;
+              border-radius: 50%;
+              animation: sparkleFloat 7.156523273325806s ease-in-out infinite 2.506292562078443s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 3.7111072285932183px;
+              height: 5.203031280326481px;
+              left: 51.03235411669528%;
+              top: 44.43652926041598%;
+              background: #ffffff;
+              border-radius: 50%;
+              animation: sparkleFloat 6.742299264159545s ease-in-out infinite 0.17560033195049807s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 2.365941625251201px;
+              height: 3.6519348326754217px;
+              left: 53.79023511797105%;
+              top: 4.989575446095484%;
+              background: #3b82f6;
+              border-radius: 50%;
+              animation: sparkleFloat 8.35430709677949s ease-in-out infinite 1.645216399464294s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 4.1707079711220345px;
+              height: 4.028519405720935px;
+              left: 60.08997647644968%;
+              top: 34.31790246928199%;
+              background: #ec4899;
+              border-radius: 50%;
+              animation: sparkleFloat 7.147215266885125s ease-in-out infinite 0.13860604346721073s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 3.4176955670389995px;
+              height: 5.698462363069233px;
+              left: 14.625949574296238%;
+              top: 76.12254671349818%;
+              background: #3b82f6;
+              border-radius: 50%;
+              animation: sparkleFloat 7.170535973834442s ease-in-out infinite 1.9428715959824507s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 5.4520932208965025px;
+              height: 3.223140342877054px;
+              left: 38.84847098288778%;
+              top: 34.824877421959776%;
+              background: #ffffff;
+              border-radius: 50%;
+              animation: sparkleFloat 6.801113270577331s ease-in-out infinite 0.07178917230733362s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 3.230667344573958px;
+              height: 2.0573283644071734px;
+              left: 64.64875828971161%;
+              top: 12.658018167108375%;
+              background: #8b5cf6;
+              border-radius: 50%;
+              animation: sparkleFloat 8.395059680859287s ease-in-out infinite 0.8408193582747852s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 4.088715246607508px;
+              height: 4.842146620093554px;
+              left: 83.2338320724827%;
+              top: 7.049661268960639%;
+              background: #3b82f6;
+              border-radius: 50%;
+              animation: sparkleFloat 9.139970640343224s ease-in-out infinite 0.9795194707768139s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 2.2191474836319016px;
+              height: 3.5911222552509363px;
+              left: 37.893522289893674%;
+              top: 94.21462965645587%;
+              background: #3b82f6;
+              border-radius: 50%;
+              animation: sparkleFloat 6.911804527767128s ease-in-out infinite 0.8236219982230347s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 5.952144863058562px;
+              height: 5.248751381968149px;
+              left: 60.504420561539284%;
+              top: 78.3732130041515%;
+              background: #ec4899;
+              border-radius: 50%;
+              animation: sparkleFloat 8.857724448582681s ease-in-out infinite 2.5777700902152905s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 4.160215331911198px;
+              height: 5.295841938524603px;
+              left: 49.6070402822972%;
+              top: 82.36603135198636%;
+              background: #ec4899;
+              border-radius: 50%;
+              animation: sparkleFloat 7.992075627279748s ease-in-out infinite 2.196376220543911s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+        </div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            
+            <!-- Animated liquid background -->
+            <div class="absolute inset-0 opacity-30">
+                <svg class="absolute inset-0 w-full h-full" viewBox="0 0 1000 1000">
+                    <defs>
+                        <linearGradient id="liquidGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color: #3b82f6; stop-opacity: 0.3;" />
+                            <stop offset="50%" style="stop-color: #8b5cf6; stop-opacity: 0.2;" />
+                            <stop offset="100%" style="stop-color: #06b6d4; stop-opacity: 0.3;" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M0,300 Q250,200 500,300 T1000,300 L1000,1000 L0,1000 Z" fill="url(#liquidGradient)" />
+                </svg>
+            </div>
+            
+            <div class="text-center mb-16">
+                
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-200 to-purple-200 bg-clip-text text-transparent">תוכניות הלימוד שלנו</h2>
+                
+            </div>
+            
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
+                
+                    <div class="relative group perspective-1000 ">
+                        
+                        
+                        <div class="relative transform-gpu transition-all duration-500 preserve-3d group-hover:rotateY-5">
+                            <div class="absolute inset-0 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/20"></div>
+                            
+                            
+                            
+                            <div class="relative z-10 p-8 space-y-6">
+                                <h3 class="text-2xl font-bold text-white text-center">תוכנית בסיסית</h3>
+                                
+                                <div class="text-center">
+                                    <div class="text-4xl md:text-5xl font-bold text-white mb-2">₪1,200</div>
+                                    <div class="text-blue-200/70">חודש</div>
+                                </div>
+                                
+                                <ul class="space-y-3">
+                                    
+                                        <li class="flex items-center gap-3 text-blue-100/80">
+                                            <span style="color: #4ade80; font-size: 1.25rem;">✓</span>
+                                            גישה לכל הקורסים
+                                        </li>
+                                    
+                                        <li class="flex items-center gap-3 text-blue-100/80">
+                                            <span style="color: #4ade80; font-size: 1.25rem;">✓</span>
+                                            מנטורינג קבוצתי
+                                        </li>
+                                    
+                                        <li class="flex items-center gap-3 text-blue-100/80">
+                                            <span style="color: #4ade80; font-size: 1.25rem;">✓</span>
+                                            פרויקטים מעשיים
+                                        </li>
+                                    
+                                        <li class="flex items-center gap-3 text-blue-100/80">
+                                            <span style="color: #4ade80; font-size: 1.25rem;">✓</span>
+                                            תעודת סיום
+                                        </li>
+                                    
+                                </ul>
+                                
+                                <a href="#contact" class="w-full py-3 font-medium rounded-xl transform hover:scale-105 transition-all duration-300 shadow-lg inline-flex items-center justify-center text-center" style="background: linear-gradient(to right, #3b82f6, #8b5cf6); color: #ffffff;">
+                                    התחל עכשיו
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="relative group perspective-1000 lg:scale-105">
+                        
+                            <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 z-20">
+                                <div class="bg-gradient-to-r from-yellow-400 to-orange-400 text-gray-900 px-4 py-2 rounded-full text-sm font-bold flex items-center gap-1 shadow-lg">
+                                    <span style="color: currentColor;">★</span>
+                                    מומלץ
+                                </div>
+                            </div>
+                        
+                        
+                        <div class="relative transform-gpu transition-all duration-500 preserve-3d group-hover:rotateY-5">
+                            <div class="absolute inset-0 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/20"></div>
+                            
+                            <div class="absolute inset-0 bg-gradient-to-br from-yellow-400/20 to-orange-400/20 rounded-2xl blur-sm"></div>
+                            
+                            <div class="relative z-10 p-8 space-y-6">
+                                <h3 class="text-2xl font-bold text-white text-center">תוכנית פרימיום</h3>
+                                
+                                <div class="text-center">
+                                    <div class="text-4xl md:text-5xl font-bold text-white mb-2">₪2,400</div>
+                                    <div class="text-blue-200/70">חודש</div>
+                                </div>
+                                
+                                <ul class="space-y-3">
+                                    
+                                        <li class="flex items-center gap-3 text-blue-100/80">
+                                            <span style="color: #4ade80; font-size: 1.25rem;">✓</span>
+                                            כל התכנים
+                                        </li>
+                                    
+                                        <li class="flex items-center gap-3 text-blue-100/80">
+                                            <span style="color: #4ade80; font-size: 1.25rem;">✓</span>
+                                            מנטור אישי
+                                        </li>
+                                    
+                                        <li class="flex items-center gap-3 text-blue-100/80">
+                                            <span style="color: #4ade80; font-size: 1.25rem;">✓</span>
+                                            פרויקט גמר
+                                        </li>
+                                    
+                                        <li class="flex items-center gap-3 text-blue-100/80">
+                                            <span style="color: #4ade80; font-size: 1.25rem;">✓</span>
+                                            תעודת הסמכה
+                                        </li>
+                                    
+                                        <li class="flex items-center gap-3 text-blue-100/80">
+                                            <span style="color: #4ade80; font-size: 1.25rem;">✓</span>
+                                            שיבוץ עבודה
+                                        </li>
+                                    
+                                </ul>
+                                
+                                <a href="#contact" class="w-full py-3 font-medium rounded-xl transform hover:scale-105 transition-all duration-300 shadow-lg inline-flex items-center justify-center text-center" style="background: linear-gradient(to right, #fbbf24, #f97316); color: #111827;">
+                                    בחר תוכנית
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#contact" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors h-11 px-8 text-white" style="background-color: #00d4ff;">
+                    
+                    השווה תוכניות
+                </a>
+                <a href="#faq" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors h-11 px-8 text-white" style="background-color: #0099cc;">
+                    
+                    יעוץ אישי
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="max-w-4xl mx-auto px-4 relative z-10">
+            <div class="text-center mb-12">
+                
+                <h2 class="text-3xl md:text-4xl font-bold" style="color: #00f5ff;">שאלות נפוצות</h2>
+            </div>
+            
+            <div class="space-y-4 mb-12">
+                
+                    <div class="rounded-lg border bg-card text-card-foreground shadow-sm p-6 bg-white/10 backdrop-blur-sm border-white/20">
+                        <h3 class="text-lg font-bold mb-2 text-right" style="color: #00f5ff;">האם צריך ידע קודם?</h3>
+                        <p class="opacity-80 text-right" style="color: #00f5ff;">לא! הקורסים מתחילים מהבסיס ומתקדמים בהדרגה לרמות מתקדמות</p>
+                    </div>
+                
+                    <div class="rounded-lg border bg-card text-card-foreground shadow-sm p-6 bg-white/10 backdrop-blur-sm border-white/20">
+                        <h3 class="text-lg font-bold mb-2 text-right" style="color: #00f5ff;">כמה זמן לוקח הקורס?</h3>
+                        <p class="opacity-80 text-right" style="color: #00f5ff;">הקורס נמשך 6 חודשים עם אפשרות להאריך בהתאם לקצב האישי</p>
+                    </div>
+                
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#contact" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors h-11 px-8 text-white" style="background-color: #00d4ff;">
+                    
+                    עוד שאלות
+                </a>
+                <a href="#final-cta" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors h-11 px-8 text-white" style="background-color: #0099cc;">
+                    
+                    דבר עם יועץ
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section id="final-cta" class="final-cta">
+        <div class="max-w-4xl mx-auto text-center px-4 relative z-10">
+            
+            <h2 class="text-3xl md:text-4xl font-bold mb-6" style="color: #00f5ff;">הזמן שלך הגיע</h2>
+            <p class="text-lg mb-8 opacity-90" style="color: #00f5ff;">אל תחכה יותר - התחל את המסע שלך לקריירה חדשה כבר היום</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#contact" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors h-11 px-8 text-white backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2);" style="background-color: #33ddff;">
+                    
+                    הירשם עכשיו
+                </a>
+                <a href="#contact" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors h-11 px-8 text-white backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2);" style="background-color: #0099cc;">
+                    
+                    שמור מקום
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        
+        <div style="position: absolute; inset: 0; overflow: hidden;">
+          
+            <div style="
+              position: absolute;
+              width: 2.2305659257348616px;
+              height: 2.475936732901573px;
+              left: 91.03258819072651%;
+              top: 19.55556596826018%;
+              background: #ec4899;
+              border-radius: 50%;
+              animation: sparkleFloat 9.273311335681178s ease-in-out infinite 2.9565471785587123s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 4.235263172957019px;
+              height: 3.0013953211212816px;
+              left: 26.91859658542175%;
+              top: 7.08378659872948%;
+              background: #8b5cf6;
+              border-radius: 50%;
+              animation: sparkleFloat 9.156796171483103s ease-in-out infinite 0.2756189287681079s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 2.358670136833648px;
+              height: 2.3346467392572596px;
+              left: 30.71656586776109%;
+              top: 31.660974527364736%;
+              background: #8b5cf6;
+              border-radius: 50%;
+              animation: sparkleFloat 7.718795652703242s ease-in-out infinite 2.297351774684378s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 2.82930975985008px;
+              height: 5.930139084565723px;
+              left: 8.86444859880834%;
+              top: 49.14783914135803%;
+              background: #8b5cf6;
+              border-radius: 50%;
+              animation: sparkleFloat 8.061688098458292s ease-in-out infinite 2.393011764085208s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 4.567338428532462px;
+              height: 4.430304504823933px;
+              left: 67.83602919536294%;
+              top: 22.087228980686213%;
+              background: #3b82f6;
+              border-radius: 50%;
+              animation: sparkleFloat 7.185594615500605s ease-in-out infinite 2.698517472519764s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 5.101693352951585px;
+              height: 2.736684351940343px;
+              left: 99.09343812803841%;
+              top: 45.8396393720534%;
+              background: #3b82f6;
+              border-radius: 50%;
+              animation: sparkleFloat 8.26155785812157s ease-in-out infinite 1.69184319045322s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 4.184136173072106px;
+              height: 4.205365461666451px;
+              left: 95.45935329741194%;
+              top: 71.65368563332903%;
+              background: #ffffff;
+              border-radius: 50%;
+              animation: sparkleFloat 7.05877011251462s ease-in-out infinite 0.980409352752558s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 5.05767575624669px;
+              height: 2.013146670175239px;
+              left: 94.89110938960104%;
+              top: 39.92315028022182%;
+              background: #ffffff;
+              border-radius: 50%;
+              animation: sparkleFloat 8.288733382063633s ease-in-out infinite 0.6536381037463708s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 4.097150868819886px;
+              height: 2.5021856163138674px;
+              left: 92.55997291188503%;
+              top: 47.79001132121332%;
+              background: #8b5cf6;
+              border-radius: 50%;
+              animation: sparkleFloat 8.703210960565729s ease-in-out infinite 0.8259782105499697s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 5.095631207136067px;
+              height: 4.877935991311825px;
+              left: 59.39783929497996%;
+              top: 18.10044117313765%;
+              background: #3b82f6;
+              border-radius: 50%;
+              animation: sparkleFloat 6.523975100903117s ease-in-out infinite 2.3602808793455017s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 3.6888179575749085px;
+              height: 3.624159221645745px;
+              left: 33.746711794007375%;
+              top: 44.380703570511585%;
+              background: #ec4899;
+              border-radius: 50%;
+              animation: sparkleFloat 6.377901847579009s ease-in-out infinite 0.6019577523344674s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 2.6649508513284896px;
+              height: 4.351235657303285px;
+              left: 57.837333199167816%;
+              top: 23.502150096598573%;
+              background: #ffffff;
+              border-radius: 50%;
+              animation: sparkleFloat 6.515638458636583s ease-in-out infinite 0.7736292886104913s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 2.866410412763735px;
+              height: 2.7688413937866043px;
+              left: 73.94085801462641%;
+              top: 70.55088546497899%;
+              background: #8b5cf6;
+              border-radius: 50%;
+              animation: sparkleFloat 7.699656680075361s ease-in-out infinite 0.10985178429471254s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 2.4136245248406363px;
+              height: 5.920124966216209px;
+              left: 68.95070448963024%;
+              top: 44.7259571460365%;
+              background: #ffffff;
+              border-radius: 50%;
+              animation: sparkleFloat 6.770310094409883s ease-in-out infinite 1.4501811235564306s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 5.008252878588802px;
+              height: 5.417529287748689px;
+              left: 12.515106527655838%;
+              top: 73.91331528897595%;
+              background: #3b82f6;
+              border-radius: 50%;
+              animation: sparkleFloat 8.552057976767813s ease-in-out infinite 2.0414197795750755s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 5.486722860964764px;
+              height: 2.678548981380386px;
+              left: 20.84349100781021%;
+              top: 16.507890282848535%;
+              background: #ffffff;
+              border-radius: 50%;
+              animation: sparkleFloat 6.975533538645806s ease-in-out infinite 0.7433266775533278s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 3.052420739752055px;
+              height: 5.833746212365542px;
+              left: 67.12296147946586%;
+              top: 34.71000223981824%;
+              background: #3b82f6;
+              border-radius: 50%;
+              animation: sparkleFloat 7.9517132834127136s ease-in-out infinite 2.892861044633123s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 3.019923112278432px;
+              height: 4.995667472748886px;
+              left: 7.515346154526304%;
+              top: 71.8910107648168%;
+              background: #ec4899;
+              border-radius: 50%;
+              animation: sparkleFloat 8.635653398511206s ease-in-out infinite 2.350074910475466s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 2.285032484865273px;
+              height: 3.9333522935318554px;
+              left: 69.43973117845614%;
+              top: 59.64758781680023%;
+              background: #3b82f6;
+              border-radius: 50%;
+              animation: sparkleFloat 8.196415651140411s ease-in-out infinite 0.6549538987342906s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 4.981139573619417px;
+              height: 5.965450014665919px;
+              left: 80.72966996875114%;
+              top: 32.839565325904054%;
+              background: #ffffff;
+              border-radius: 50%;
+              animation: sparkleFloat 9.459350406437965s ease-in-out infinite 2.2806408533508993s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 4.891409708103074px;
+              height: 4.204123002490727px;
+              left: 17.293764294524816%;
+              top: 14.880138973686341%;
+              background: #ffffff;
+              border-radius: 50%;
+              animation: sparkleFloat 9.05298270042494s ease-in-out infinite 1.7874961386116714s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 2.9178892994749623px;
+              height: 3.7419084558349804px;
+              left: 8.859923641197398%;
+              top: 17.12366724442186%;
+              background: #3b82f6;
+              border-radius: 50%;
+              animation: sparkleFloat 9.354086206774753s ease-in-out infinite 2.7102181897327977s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 5.702252323022007px;
+              height: 2.0334000766093503px;
+              left: 21.05459995594391%;
+              top: 94.65421166203481%;
+              background: #3b82f6;
+              border-radius: 50%;
+              animation: sparkleFloat 8.161945345018902s ease-in-out infinite 2.979678529822413s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 5.831240417744628px;
+              height: 5.00832309573346px;
+              left: 76.95605683741718%;
+              top: 81.33325380026346%;
+              background: #3b82f6;
+              border-radius: 50%;
+              animation: sparkleFloat 6.47148501480876s ease-in-out infinite 2.4960628950613035s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 2.4218439165016705px;
+              height: 2.040765666604281px;
+              left: 28.15171854837548%;
+              top: 98.33804002056542%;
+              background: #ffffff;
+              border-radius: 50%;
+              animation: sparkleFloat 6.669223218915736s ease-in-out infinite 1.068031824098159s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 4.085302331503961px;
+              height: 2.751643624714003px;
+              left: 23.819596021583045%;
+              top: 88.31518809142794%;
+              background: #8b5cf6;
+              border-radius: 50%;
+              animation: sparkleFloat 8.170286581109618s ease-in-out infinite 2.370882131665347s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 2.782701705834508px;
+              height: 2.1043505648462095px;
+              left: 79.92756330189415%;
+              top: 53.819611853330414%;
+              background: #8b5cf6;
+              border-radius: 50%;
+              animation: sparkleFloat 6.893869916931042s ease-in-out infinite 1.9957870999943237s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 2.1790245027433137px;
+              height: 4.77706864569836px;
+              left: 72.86827565493776%;
+              top: 62.92180615234937%;
+              background: #8b5cf6;
+              border-radius: 50%;
+              animation: sparkleFloat 6.321032627486195s ease-in-out infinite 0.48470261662632386s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 3.2564136641939045px;
+              height: 5.728210018793594px;
+              left: 53.98638342241948%;
+              top: 18.272093423096415%;
+              background: #8b5cf6;
+              border-radius: 50%;
+              animation: sparkleFloat 9.559199009878872s ease-in-out infinite 0.7816902074776255s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 5.811036263752351px;
+              height: 4.668031267101995px;
+              left: 98.9034729122632%;
+              top: 62.19722967541597%;
+              background: #ec4899;
+              border-radius: 50%;
+              animation: sparkleFloat 7.4521527340671625s ease-in-out infinite 2.9213921047078344s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 4.203178481623823px;
+              height: 3.9194360050758092px;
+              left: 13.31186098043281%;
+              top: 0.25687629321382577%;
+              background: #8b5cf6;
+              border-radius: 50%;
+              animation: sparkleFloat 6.401038423027607s ease-in-out infinite 2.358536948459018s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 4.9116336902499995px;
+              height: 4.550772577792039px;
+              left: 20.31243045786917%;
+              top: 84.1571364408758%;
+              background: #3b82f6;
+              border-radius: 50%;
+              animation: sparkleFloat 8.746797107875537s ease-in-out infinite 0.8739436513321206s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 2.440621363779441px;
+              height: 4.486197847387361px;
+              left: 64.50835643528137%;
+              top: 95.33082014931115%;
+              background: #8b5cf6;
+              border-radius: 50%;
+              animation: sparkleFloat 6.0898539393128095s ease-in-out infinite 2.211194189579649s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 4.742723030918289px;
+              height: 3.7460653717207975px;
+              left: 2.976402997173966%;
+              top: 92.45277068347976%;
+              background: #ec4899;
+              border-radius: 50%;
+              animation: sparkleFloat 9.963835710668109s ease-in-out infinite 0.9842720958180478s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+            <div style="
+              position: absolute;
+              width: 3.607472793564563px;
+              height: 5.367475454882658px;
+              left: 10.659178075300357%;
+              top: 88.62245297401947%;
+              background: #ffffff;
+              border-radius: 50%;
+              animation: sparkleFloat 9.252825782665s ease-in-out infinite 1.4274939944206622s;
+              filter: blur(0.5px);
+              box-shadow: 0 0 6px currentColor;
+            "></div>
+          
+        </div>
+        <div class="max-w-4xl mx-auto text-center px-4 relative z-10">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6" style="color: #00f5ff;">יש שאלות? בואו נדבר</h2>
+            <p class="text-xl mb-8 opacity-80" style="color: #00f5ff;">הצוות שלנו כאן כדי לעזור לך למצוא את התוכנית המתאימה</p>
+            <div class="rounded-lg border bg-card text-card-foreground shadow-sm p-8 max-w-md mx-auto bg-white/10 backdrop-blur-sm border-white/20">
+                <form class="space-y-4">
+                    <input type="text" placeholder="שם מלא" class="w-full px-3 py-2 border border-input rounded-md text-right bg-white/10 border-white/20 text-white placeholder:text-white/70" />
+                    <input type="email" placeholder="אימייל" class="w-full px-3 py-2 border border-input rounded-md text-right bg-white/10 border-white/20 text-white placeholder:text-white/70" />
+                    <input type="tel" placeholder="טלפון" class="w-full px-3 py-2 border border-input rounded-md text-right bg-white/10 border-white/20 text-white placeholder:text-white/70" />
+                    <textarea placeholder="הודעה" rows="4" class="w-full px-3 py-2 border border-input rounded-md text-right bg-white/10 border-white/20 text-white placeholder:text-white/70"></textarea>
+                    <button type="submit" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors h-11 px-8 w-full text-white backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2);" style="background-color: #00d4ff;">
+                        צור קשר
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- New Content Sections -->
+    
+    
+    
+    
+    
+    
+    
+    
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="text-center">
+            <p style="color: #00f5ff;">&copy; 2024 Neon Academy Pro. כל הזכויות שמורות.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
